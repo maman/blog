@@ -16,7 +16,7 @@
       <% elsif article.link.index 'reddit' %>
         <small class="entry-unrelated" >reddit</small>
       <% end %>
-      <h1 class="entry-title"><a href="<%= article.link %>" title="<%= article.title %>"><%= article.linktitle %></a><a href="<%= article.path %>" title="Permalink to article"><i class="icon-link"></i></a></h1>
+      <h1 class="entry-title"><a href="<%= article.link %>" title="<%= article.linktitle %>"><%= article.title %></a><a href="<%= article.path %>" title="Permalink to article"><i class="icon-link"></i></a></h1>
     <% else %>
       <h1 class="entry-title"><a href="<%= article.path %>"><%= article.title %></a></h1>
     <% end %>

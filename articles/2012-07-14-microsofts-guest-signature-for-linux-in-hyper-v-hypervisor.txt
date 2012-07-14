@@ -1,0 +1,20 @@
+---
+title: Microsoft's guest signature for linux in Hyper-V Hypervisor
+date: 14/07/2012
+description: B16B00B5 FTW
+link: https://lkml.org/lkml/2012/7/13/261
+
+>If I have to explain this I'm going to be very sad.
+
+I lol'd.  
+but apparently, according to [Wikipedia](http://en.wikipedia.org/wiki/Hexspeak) :
+
+>0xB16B00B5 ("big boobs") is required by Microsoft's Hyper-V hypervisor to be used by Linux guests as their "guest signature".
+
+it seems that linux kernel source code are full of profanity words like these.  
+[This man even take it too far](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=477454).
+
+not only kernel source code, the universe of open source is full of offending and sexist words. do you remember mozilla's [libpr0n](https://wiki.mozilla.org/Libpr0n)? [libcaca](http://caca.zoy.org/wiki/libcaca)? even the license is [WTFPL](http://sam.zoy.org/wtfpl/), a.k.a _Do What The Fuck You Want To Public License_ - it means _Completely Free_, btw.
+
+but thanks, the Big Boobs is now Defaced.
+
