@@ -319,6 +319,7 @@ article.hentry div.entry-content {
 .entry-content blockquote {
 	padding-left: 30px;
 	position: relative;
+	font-style: italic;
 }
 
 .entry-content blockquote:before {
