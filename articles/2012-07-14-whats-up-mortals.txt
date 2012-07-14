@@ -1,0 +1,21 @@
+---
+title: What's up, mortals
+date: 14/07/2012
+description: Introduction Post
+
+_Hello, world. nice to meet you._  
+
+yeah, layout baru. baru beberapa bulan, ganti lagi :3
+kali ini yang ganti bukan hanya template, tapi juga full mulai dari engine.  
+
+di blog baru ini gw pake [toto](http://github.com/cloudhead/toto), dimana toto ini unik, soalnya artikel artikel yang gw tulis disini engga disimpan di database, melainkan cuma disebar di satu folder khusus dalam bentuk plaintext. viva vim!  
+
+sama seperti engine [scanty](http://github.com/adamwiggins/scanty) yang gw pake sebelumnya, toto masih berbasis ruby. Ruby yang dia pake bener" plain & hack-able abis, jadi dijamin gak terlalu ruwet untuk kustomisasinya.  
+
+untuk tampilan, gw niru / kopas / mbajak - sori :| - punya [Dustin Curtis](http://dcurt.is), yang diberi nama Svbtle. rada kontroversial nih, waktu dulu diluncurkan, dalam +-3 hari Svbtle yang closed-source & untuk kalangan terbatas ini dibuat clone open-sourcenya sama [Nate Wienert](http://natewienert.com), dan diberi nama [Obtvse](http://github.com/nwienert/obtvse). nah, karena si Nate ini dianggap membajak, rame dah dunia persilatan.  
+- btw - apa hubungannya sama postingan hello world ini ? :s  
+nah template yang gw pake ini mungkin sebagian orang menganggap gw membajak. terserah mau bilang apa, yang penting gw puas dengan tampilan blog gw yang seperti ini :3  
+
+toh, Toto enggak punya fitur post - edit - dsb secara live seperti Svbtle & Obtvse ...
+
+btw lagi - posting artikel dari blog lama gw entaran yah. repot.
