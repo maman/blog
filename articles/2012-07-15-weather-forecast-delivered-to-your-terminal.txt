@@ -2,15 +2,15 @@
 title: Weather forecast, delivered to your Terminal
 date: 15/07/2012
 
-`(Finger)[http://man.cx/finger]` can be used to lookup the current weather forecast for your city by running  
+`finger` ((Manpage)[http://man.cx/finger]) can be used to lookup the current weather forecast for your city by running  
 
-  finger cityname@graph.no
+    finger cityname@graph.no
 
 for further info, run
 
-  finger @graph.no
+    finger @graph.no
 
 and to get one-liner weather report suitable to use in tmux statusline / screen hardstatus just run
 
-  finger o:cityname@graph.no
+    finger o:cityname@graph.no
 
