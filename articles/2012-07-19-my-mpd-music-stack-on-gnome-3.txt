@@ -1,0 +1,29 @@
+---
+title: my mpd music stack on gnome 3
+date: 19/07/2012
+description: My MPD Config on gnome 3
+
+Gnome 3 adds support for [MPRIS API](http://specifications.freedesktop.org/mpris-spec/latest/), which provide a mechanism for basic playback control of media players inside the Volume applet.  
+
+sadly, [MPD](http://sourceforge.net/projects/musicpd/) isn't support the MPRIS API.  
+enter [mpDris2](https://github.com/eonpatapon/mpDris2), a python-based bridge which serve as a bridge for MPD to interfacing with MPRIS API.  
+
+I'm also a big fan of [Last.fm](http://last.fm) - my [profile](http://last.fm/user/maman__) - so I'm using [mpdscribble](https://www.ohloh.net/p/mpdscribble) to scrobble my playlist tracks to last.fm.  
+
+Here's the autostart script that I'm using:  
+
+    #!/bin/bash
+    pidof mpd >& /dev/null
+    if [ $? -ne 0 ]; then
+        mpd &
+    fi
+    pidof mpdscribble >& /dev/null
+    if [ $? -ne 0 ]; then
+        mpdscribble &
+    fi
+    pidof python2 >& /dev/null
+    if [ $? -ne 0 ]; then
+        mpDris2 &
+    fi
+
+then change the permission to executable by running `chmod +x /path/to/script`, and add to autostart by using `gnome-session-properties` utility.
