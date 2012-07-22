@@ -1,0 +1,9 @@
+---
+title: Different pattern of Window Switching in Gnome 3
+date: 22/07/2012
+description: the different pattern of window switching in gnome 3
+
+Just noticed that in Gnome 3, `Alt + Tab` key can't be used to switch between windows. Instead, they __*switching between apps*__.  
+
+use `Alt +`` key - yeah, that key on the top of Tab key - to __*switch between windows of the same apps*__.  
+
