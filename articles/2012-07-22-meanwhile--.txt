@@ -1,0 +1,9 @@
+---
+title: Meanwhile . .
+date: 22/07/2012
+description: A Redditor's comment about Memory Usage in the firefox 15 thread. yes,
+  firefox.
+link: http://www.reddit.com/r/linux/comments/wt7p8/firefox_15_plugs_the_addon_leaks/c5gkvwt
+
+He's right, though.
+
