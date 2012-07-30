@@ -1,0 +1,14 @@
+---
+title: RMS, why should I care about those nonfree games ?
+date: 30/07/2012
+description: my opinions about RMS' article about valve's nonfree DRM'd games on GNU/Linux
+link: https://www.gnu.org/philosophy/nonfree-games.en.html
+
+>Nonfree game programs (like other nonfree programs) are unethical because they deny freedom to their users. (Game art is a different issue, because it isn't software.) If you want freedom, one requisite for it is not having nonfree programs on your computer. That much is clear.
+
+I want freedom, but I'm simply care about those people who make live by making such awesome games / platform. what will happen, if as you say, they must make their work "free" ?  
+or maybe you didn't care at all, because you want them to not selling computer programs :/  
+>Any GNU/Linux distro that comes with software to offer these games will teach users that the point is not freedom. Nonfree software in GNU/Linux distros already works against the goal of freedom. Adding these games to a distro would augment that effect.  
+
+There you go. you simply pushing your idea of "freedom" to the masses.  
+I think most users won't care much about their ability to modificate the programs. they'll just use it. why bother, then ? for them, the ability to use the computer to work, or play, and the computer do it flawlessly, that's freedom. itsn't just about the ability to modificate.
