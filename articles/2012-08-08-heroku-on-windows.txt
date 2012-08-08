@@ -1,0 +1,73 @@
+--- 
+title: Heroku on Windows
+date: 08/08/2012
+description: Installing heroku on windows - in a hard way.
+
+Getting heroku on windows isn't hard, but it's prety frustating. Here I'm 
+using a Windows 7 x64 with sp1 installed, and [Cygwin](http://www.cygwin.com).  
+
+###cygwin. first. why ?
+because it's the most stable - in my opinion - "linux emulators" on the windows platform. sure, it needs some sort of compability layers, thus make it non-native, but it just works.  
+
+and introduce yourself to [apt-cyg](http://code.google.com/p/apt-cyg/) to avoid frustation from dealing with cygwin's package manager.  
+its apt-like syntax is easy and straightforward when comparing with setup.exe (yeah, cygwin uses its *installer* to act as *package manager* by default.)  
+
+###rbenv
+i'm using rbenv in place of rvm. it's like rvm - but smaller, cleaner, and stable. the syntax is mostly similiar with rvm, so you'll get no trouble from migrating.  
+be sure to familiarize yourself to read `rbenv help`, though.  
+
+###install cygwin
+install cygwin as usual - just next next like a typical windows software installations.  
+but beware of the software selection screen. you need to select 
+`subversion` and `wget` to install. we need that to use `apt-cyg`. when you click next, the dependencies will be selected automatically, just click next again to install all, and this part is complete.  
+
+###install apt-cyg
+open cygwin shell, and run this:  
+
+    svn --force export http://apt-cyg.googlecode.com/svn/trunk/ /bin/
+    chmod +x /bin/apt-cyg
+
+and now you can use apt-cyg command to manage cygwin packages. we'll start by adding development tools - you know, gcc and friends - and some additional libraries. run this to install them all:  
+
+    apt-cyg install gcc openssl openssl-devel openssh  
+
+also you can include `mintty` to those lines to install [mintty](http://code.google.com/p/mintty/), a better terminal to use cygwin rather than cmd.exe  
+
+###install rbenv
+it's pretty straightforward. just follow [the official install guide](https://github.com/sstephenson/rbenv/#-2-installation).  
+installing [ruby-build](https://github.com/sstephenson/ruby-build) is also a good idea, since it provides a convenient `rbenv install` command to automate ruby installation process to rbenv.  
+after you're done, restart mintty / cmd, and you're set.  
+
+###install ruby and rubygems
+run this command to install ruby and rubygems - in this machine, I'm using 
+ruby 1.9.2-p180.  
+feel free to use the other versions, you can see the supported rubies by issuing `rbenv install` command.  
+
+    ruby-build 1.9.2-p180 ~/.rbenv/versions/1.9.2-p290 --with-openssl-dir=/usr/local  
+
+here we used *`ruby-build`*, not *`rbenv install`*, because we need to pass `--with-openssl-dir` build config so ruby will be compiled with SSL support, which will be needed for heroku gem to work.  
+this will take some time to complete, because it will compile ruby from stratch.  
+
+after done, run `rbenv rehash` to "refresh" rbenv, so the system knows there's ruby installed by rbenv.  
+also it's good to set the newly-installed ruby to be the default ruby interpreter. run this command:  
+
+    rbenv global 1.9.2-p180  
+
+our work is done here. check if ruby is installed with ssl support by 
+running this command: 
+
+    ruby -v
+    irb
+    require 'openssl' # should be '=> true'  
+
+###install heroku gems - and login
+by install ruby with rbenv, we also get `gem` commands ready to install any libraries - or gems that we need.  
+in this case, we need `heroku`, `foreman`, `rb-readline`, and `bundler`. run these command to install them:  
+
+    gem install heroku foreman rb-readline bundler
+
+after everything ready, we need to login to heroku by using `heroku login` command. after login, we need to create a ssh public key to authenticate. [this github help articles might help](https://help.github.com/articles/generating-ssh-keys).  
+use `heroku keys:add` to authenticate with heroku, and here we are. our machine is now equipped with a powerful linux commandline, and ruby + heroku are ready at our disposal. time to continue your work.
+
+###tl;dr
+heroku provide a tool called [heroku toolbelt](https://toolbelt.heroku.com) that simplify the heroku CLI installations for many platforms.  
