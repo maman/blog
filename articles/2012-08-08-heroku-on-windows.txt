@@ -43,7 +43,7 @@ run this command to install ruby and rubygems - in this machine, I'm using
 ruby 1.9.2-p180.  
 feel free to use the other versions, you can see the supported rubies by issuing `rbenv install` command.  
 
-    ruby-build 1.9.2-p180 ~/.rbenv/versions/1.9.2-p290 --with-openssl-dir=/usr/local  
+    ruby-build 1.9.2-p180 ~/.rbenv/versions/1.9.2-p180 --with-openssl-dir=/usr/local  
 
 here we used *`ruby-build`*, not *`rbenv install`*, because we need to pass `--with-openssl-dir` build config so ruby will be compiled with SSL support, which will be needed for heroku gem to work.  
 this will take some time to complete, because it will compile ruby from stratch.  
