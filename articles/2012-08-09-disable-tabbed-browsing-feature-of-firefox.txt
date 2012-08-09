@@ -1,0 +1,20 @@
+--- 
+title: Disable tabbed browsing feature of firefox
+date: 09/08/2012
+description: Disable the tab feature of firefox web browser to improve focus
+link: http://piro.sakura.ne.jp/xul/_tabkiller.html.en
+
+so, yeah.  
+Tabbed browsing makes my websurfing activity biased.  
+
+###why?
+because if I'm interested with a link - no matter if it relevant with anything that I'm doing right now - I can open it. **_in a new tab_**.  
+that makes me not focused with what am I doing, because the irrelevant link drive me away.  
+
+###well, kill the tab!
+this addon will disable tabbed browsing feature of firefox. if you try to open up a link in a new tab, it 'll open a new window instead. neeeaat.  
+
+###it isn't compatible with my firefox version :(
+install [checkCompability](https://addons.mozilla.org/id/firefox/addon/checkcompatibility/) addon first, and you're good to go.
+
+p.s: install [pentadactyl](http://5digits.org/pentadactyl/) extension for more zen. also, I recommend to set `:set guioptions=bCsn` and `:set showtabline=never` inside pentadactyl's ex mode.
