@@ -5,5 +5,6 @@ description: a pleasing melody of tires going over the cracks in a highway - bui
 
 <object width="420" height="315"><param name="movie" value="http://www.youtube.com/v/YR5Cejq2uyc?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/YR5Cejq2uyc?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="420" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
-so creative and good. damn, it was genius.
+so creative and good. damn, it was genius.  
 
+taken from Jalopnik's [The Ten Craziest Stunts Pulled By Automakers](http://jalopnik.com/5936459/the-ten-craziest-stunts-pulled-by-automakers/gallery/?tag=answers-of-the-day)
