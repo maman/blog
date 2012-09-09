@@ -1,0 +1,9 @@
+---
+title: RIM on Security
+date: 09/09/2012
+description: apparently, RIM is very serious about their blackberry security
+
+>RIM doesn't give a shit when it comes to security
+
+despite of half-empty app stores and decreased profit, Blackberry is still the first choice when it comes to security-oriented consumers.
+
