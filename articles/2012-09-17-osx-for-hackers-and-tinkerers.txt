@@ -1,0 +1,13 @@
+--- 
+title: OSX for Hackers and Tinkerers
+date: 17/09/2012
+description: OSX Config for hackers and tinkerers
+
+Recently, I'm switching over to Hackintosh, OS X 10.7.0 "Lion" to be specific.  
+my first attempt isn't very nice, and I end up reformatting my HDD. but it's worth the experience :D  
+after get things up, I use [this OSX for Hackers script](https://github.com/mathiasbynens/dotfiles/blob/master/.osx), and install [gcc without XCode](https://github.com/kennethreitz/osx-gcc-installer) - which save you 1,5 GB ;).  
+next, install [Homebrew](mxcl.github.com/homebrew/) to add a package manager for your OSX. with this, you can install - almost every tools you need to hack out some projects.  
+
+by the way, I'm formatting my OSX install HDD as HFS+ with case-sensitive enabled. which give me problems when installing Adobe's Software. The Workaround is avalaible [here](https://gist.github.com/1368631), which basically use a sparse disk image to install, copy over the files, and rename some of them to lowercase ('cmon, adobe. doesn't it __easy to fix__?? ).  
+
+Later i'll share my findings - and new interesting things on developing with this Hackintosh. cya !
