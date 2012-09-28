@@ -3,6 +3,6 @@ title: Melayang
 date: 28/09/2012
 link: http://id.wikipedia.org/wiki/Melayang_(album_January_Christy)
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F24908169&amp;auto_play=false&amp;show_artwork=false&amp;color=ff0000"></iframe>
+<object height="81" width="100%"> <param name="movie" value="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F24908169"></param> <param name="allowscriptaccess" value="always"></param> <embed allowscriptaccess="always" height="81" src="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F24908169" type="application/x-shockwave-flash" width="100%"></embed> </object>  
 
 The song "Melayang" by January Christy. love it.
