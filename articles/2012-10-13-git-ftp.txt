@@ -1,0 +1,12 @@
+--- 
+title: Git-FTP
+date: 13/10/2012
+description: git-ftp
+link: https://github.com/resmo/git-ftp
+
+Git-FTP is a [Git]() powered FTP Client to ease the workflow of uploading a Git-managed web project to a low-cost servers or web hosting solutions that only support FTP.  
+
+the difference between Git-FTP and the other FTP client, Git-FTP are capable to change only modified files, instead of re-uploading the whole applications.  
+
+seems like a nifty little addons to Git :3
+
