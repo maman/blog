@@ -7,10 +7,6 @@ description: drupload - behind the scene
 
 Drupload adalah webapp yang dibuat dengan [Node.js]() dan [Express](http://expressjs.com) framework. Basisnya adalah sebuah webapp bernama [dragDrop](https://github.com/piatra/dragDrop) yang dibuat oleh [Andrei Oprea](https://github.com/piatra), dengan beberapa perubahan seperti perubahan engine dan interface.  
 
-####Interface
-
-![drupload](http://f.cl.ly/items/2Z2P0s0P3R1J323p1d3T/Screen%20Shot%202012-09-28%20at%206.32.13%20PM.png)
-
 ####Awal Mula
 
 berangkat dari keinginan belajar Node.js, kurangnya fitur sharing data antara Mac - Windows, ditambah dengan tugas kuliah yang menumpuk, maka lahirlah drupload. jejejeeeng.  
@@ -26,6 +22,10 @@ err, sebenarnya buat conto-contoan saat ada kuis besar - jangan ditiru :')
 Node.js diinstal di mac via [Homebrew](http://mxcl.github.com/homebrew/) - udah baca [postingan gw sebelumnya ?](http://mahardi.herokuapp.com/2012/09/17/osx-for-hackers-and-tinkerers/)
 
 sebenernya socket.io bukan dependensi wajib, dan belum disertakan juga di file `package.json` - tapi install aja sih, daripada entar gamau jalan :|
+
+####Interface
+
+![Imgur](http://i.imgur.com/bMUTJ.png)
 
 ####Cara Kerja
 
