@@ -3,7 +3,7 @@ title: Drupload - a Drag n Drop file uploader
 date: 13/10/2012
 description: drupload - behind the scene
 
-![drupload](http://f.cl.ly/items/2Z2P0s0P3R1J323p1d3T/Screen%20Shot%202012-09-28%20at%206.32.13%20PM.png)
+<img src=http://f.cl.ly/items/2Z2P0s0P3R1J323p1d3T/Screen%20Shot%202012-09-28%20at%206.32.13%20PM.png width=500px>
 
 ###The Drupload case studies
 
