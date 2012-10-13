@@ -1,0 +1,41 @@
+--- 
+title: Drupload - a Drag n Drop file uploader
+date: 13/10/2012
+description: drupload - behind the scene
+
+![drupload](http://f.cl.ly/items/2Z2P0s0P3R1J323p1d3T/Screen%20Shot%202012-09-28%20at%206.32.13%20PM.png)
+
+###The Drupload case studies
+
+Drupload adalah webapp yang dibuat dengan [Node.js]() dan [Express](http://expressjs.com) framework. Basisnya adalah sebuah webapp bernama [dragDrop](https://github.com/piatra/dragDrop) yang dibuat oleh [Andrei Oprea](https://github.com/piatra), dengan beberapa perubahan seperti perubahan engine dan interface.  
+
+####Awal Mula
+
+berangkat dari keinginan belajar Node.js, kurangnya fitur sharing data antara Mac - Windows, ditambah dengan tugas kuliah yang menumpuk, maka lahirlah drupload. jejejeeeng.  
+
+err, sebenarnya buat conto-contoan saat ada kuis besar - jangan ditiru :')  
+
+####Teknologi
+
+* Node.js 0.8.11
+* Express.js 3.0
+* Socket.io 0.9.10
+
+Node.js diinstal di mac via [Homebrew](http://mxcl.github.com/homebrew/) - udah baca [postingan gw sebelumnya ?](http://mahardi.herokuapp.com/2012/09/17/osx-for-hackers-and-tinkerers/)
+
+sebenernya socket.io bukan dependensi wajib, dan belum disertakan juga di file `package.json` - tapi install aja sih, daripada entar gamau jalan :|
+
+####Cara Kerja
+
+1. gw jalanin webappnya - `node index.js`
+2. User upload via drag 'n drop file yg mau diupload ke dropzone - ada di `div#dropzone`
+3. Buat 'payload' via js - ada di `static/js/script.js`, fungsi `drop()`.
+4. payload yang tadi dikirim ke server via AJAX call - di `script.js`, fungsi `sendFiles()`.
+5. server memproses AJAX call dari klien, disimpan di folder `upload`, terus "lapor" ke klien kalo ada file masuk
+6. klien memproses laporan, tambahin konten berupa link ke file di `ul#itemlist`.
+7. User download file dengan nge-klik link tsb. oke, done.
+
+####Source & Repo
+
+ada di [Bitbucket](https://bitbucket.org/nanomites_webdev/drupload).  
+sori kalo style kodingnya rada ancur, soalnya lebih ke node-hack nya ketimbang buat dipake di production environment :|
