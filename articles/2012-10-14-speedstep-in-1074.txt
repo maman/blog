@@ -1,0 +1,33 @@
+--- 
+title: Speedstep in 10.7.4
+date: 14/10/2012
+description: Enabling intel SpeedStep on OSX 10.7.4 with Core i3-2330M Processor
+
+####Proof
+![Imgur](http://i.imgur.com/2EigI.png)
+
+####Howto
+first, the requirements:  
+
+* Original AppleIntelCPUPowerManagement.kext from 10.7.4 - you can extract it from 10.7.4 delta upgrade pkg with [unpkg](http://www.timdoug.com/unpkg/)
+* [Speedstep Patch](http://olarila.com/forum/viewtopic.php?f=9&t=1003)
+* [SSDT for i3-2330M](http://cl.ly/K8sA)
+* [Chameleon Wizard](http://www.insanelymac.com/forum/topic/257464-chameleon-wizard-utility-for-chameleon/)
+* [Kext Utility](http://www.osx86.net/view/2514-latest_kext_utility_10.8_edition.html)
+* [MSRDumper](http://legacy.tonymacx86.com/viewtopic.php?t=61034)
+
+####Action !
+
+1. patch the AppleIntelCPUPowerManagement.kext :
+
+		perl AICPMPatch.pl AppleIntelCPUPowerManagement.kext/Contents/MacOS/AppleIntelCPUPowerManagement --patch
+
+2. next, place the SSDT to `/Extra/`
+3. add the following options to Chameleon Wizard's boot.plist section : ![Imgur](http://i.imgur.com/AQxlB.png)
+4. Install the patched AppleIntelCPUPowerManagement.kext with Kext Utility - be sure to remove `NullCPUPowerManagement.kext` from `/System/Library/Extensions` first !
+5. Cross your Fingers and Reboot.
+6. to check if Speedstep enabled or not, use MSRDumper :
+
+		sudo kextload MSRDumper.kext
+	
+	open `Console.app` in `/Applications/Utilities/`, and select kernel.log on the sidebar. you'll see the current speed on the screen.
