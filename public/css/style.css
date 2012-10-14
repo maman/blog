@@ -357,6 +357,11 @@ article.hentry div.entry-content {
 	font-style: italic;
 }
 
+.entry-content img {
+  max-width: 400px;
+  width: 400px;
+}
+
 @media only screen and (min-width: 1300px) {
 	header#sidebar {
 		margin-left: 0;
