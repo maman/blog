@@ -1,0 +1,10 @@
+--- 
+title: Easy to Read Standard
+date: 20/10/2012
+description: Good article about text and typography on the web by Oliver Reichenstein of information Architects
+link: http://informationarchitects.net/blog/100e2r/
+
+>We don’t want to change our browser settings every time we visit a website!  
+
+a good article about how to make your web pages - blog included easy to read by visitors.  
+
