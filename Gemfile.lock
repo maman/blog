@@ -5,10 +5,13 @@ GEM
     hpricot (0.8.6)
     rack (1.4.1)
     rdiscount (1.6.8)
+    rubypants (0.2.0)
     toto (0.4.9)
       builder
       rack
       rdiscount
+    typogruby (1.0.15)
+      rubypants
 
 PLATFORMS
   ruby
@@ -18,3 +21,4 @@ DEPENDENCIES
   hpricot
   rdiscount
   toto
+  typogruby
