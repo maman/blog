@@ -1,6 +1,16 @@
+require 'typogruby'
 require 'hpricot'
 
 module Toto
+	module Template
+		def markdown text
+			if (options = @config[:markdown])
+				Typogruby.improve(Markdown.new(text.to_s.strip, *(options.eql?(true) ? [] : options)).to_html)
+			else
+				text.strip
+			end
+		end
+	end
 	class Article < Hash
 		include Template
 
