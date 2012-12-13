@@ -3,10 +3,13 @@ title: Speedstep + ALC269 Audio Fix
 date: 05/12/2012
 description: some fixes for speedstep stuff and ALC269 audio, tested on Asus A43SJ with OSX Lion 10.7.4
 
-Here's part two from my recent attempt in activating speedstep on Asus A43SJ[^1], which using Intel Core i3 - 2330M Mobile Processor.  
+**edit**
+
+I've updated the DSDT to include NVIDIA 520M Injector, thanks to [Andrew](http://rampagedev.wordpress.com). so if you use my DSDT, **remove the `GraphicEnabler = yes` line from your boot.plist**
+
+Here's part two from my recent attempt in activating speedstep on Asus A43SJ, which using Intel Core i3 - 2330M Mobile Processor.  
 
 First, you need the AppleIntelCPUPowerManagement from Probook Installer, which you can download [here](http://www.tonymacx86.com/hp-probook/78407-hp-probook-installer-6-beta.html). then, use the SSDT from there too -- inside 'i3-2330M' folder. 
 
-In order to make the system more complete, use [this DSDT](http://cl.ly/LNYl). this includes many fixes, like RTC fix, HPET fix, ALC269 Fix, and some other fixes. for the audio, remove VoodooHDA.kext first -- then install AppleHDA and IOAudioFamily from [this thread](http://www.tonymacx86.com/laptop-compatibility/51019-update-alc-269-patch-applehda-may-work-idea-others.html). for IOAudioFamily, use the `IOAudioFamily.kext10.7.4_Patch_2.zip`, because if you don't, your laptop won't be able to wake from sleep.
+In order to make the system more complete, use [this DSDT](http://cl.ly/La1b). this includes many fixes, like RTC fix, HPET fix, ALC269 Fix, and some other fixes. for the audio, remove VoodooHDA.kext first -- then install AppleHDA and IOAudioFamily from [this thread](http://www.tonymacx86.com/laptop-compatibility/51019-update-alc-269-patch-applehda-may-work-idea-others.html). for IOAudioFamily, use the `IOAudioFamily.kext10.7.4_Patch_2.zip`, because if you don't, your laptop won't be able to wake from sleep.
 
-[^1]: see [http://mahardi.herokuapp.com/2012/10/14/speedstep-in-1074/](http://mahardi.herokuapp.com/2012/10/14/speedstep-in-1074/) for my first attempt
