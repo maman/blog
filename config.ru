@@ -5,6 +5,8 @@ require File.expand_path('../helper', __FILE__)
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/img', '/font', '/favicon.ico'], :root => 'public'
 use Rack::CommonLogger
+use Rack::Deflater
+run Improvingoutcomes::Application
 
 if ENV['RACK_ENV'] == 'development'
   use Rack::ShowExceptions
