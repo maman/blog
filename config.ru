@@ -6,7 +6,6 @@ require File.expand_path('../helper', __FILE__)
 use Rack::Static, :urls => ['/css', '/js', '/img', '/font', '/favicon.ico'], :root => 'public'
 use Rack::CommonLogger
 use Rack::Deflater
-run Improvingoutcomes::Application
 
 if ENV['RACK_ENV'] == 'development'
   use Rack::ShowExceptions
@@ -33,6 +32,5 @@ toto = Toto::Server.new do
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
 end
 
-run toto
-
+run Improvingoutcomes::toto
 
