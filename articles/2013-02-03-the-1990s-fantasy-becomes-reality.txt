@@ -1,0 +1,17 @@
+--- 
+title: The 1990s fantasy becomes reality
+date: 03/02/2013
+description: the predictions about Dropbox in 1996 by David Gelernter, pProfessor of Computer Science at Yale University
+link: http://www.edge.org/documents/digerati/Gelernter.html
+
+at early 1990s, we dreams about interconnected computers, and first brought to the masses by [Tim Berners-Lee](http://en.wikipedia.org/wiki/Tim_Berners-Lee) in the form of WWW - the World-Wide Web.  
+
+Time goes on, and we need something to make the interwebs really works. we created platforms, we built personal websites, and go further. finally, we dreams about the need of interconnected life. without worrying about platform differencies, etc.  
+
+Professor David Gelernter of Yale University says something about interconnected lifein 1996 :
+
+>The most important way people are going to make money on the Net is on the model of the electric power utilities or cable TV companies, by providing a service that you are going to pay for monthly. I am going to hire a server to manage all my documents, I am going to throw out my desk and file cabinets, I am not going to care what computer I use, and I will be happy to pay $12.50 a month for an absolutely reliable storage facility. This company stores my documents, supports all sorts of fancy searches, and makes my documents available anywhere.  
+
+it's the thing that exist - something called [Dropbox](http://dropbox.com), [iCloud](http://apple.com/icloud), or [Google Drive](http://drive.google.com).  
+they sync your documents, your files, and your other crap to their servers, manage them, index them so you're easier to find it later, and it all requires you to pay (although there's free plan with limited storage space). the fantasy becomes reality.
+
