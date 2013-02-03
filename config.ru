@@ -32,5 +32,5 @@ toto = Toto::Server.new do
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
 end
 
-run toto
-
+#run toto
+run Improvingoutcomes::toto
