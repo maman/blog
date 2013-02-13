@@ -60,7 +60,7 @@ i {
 
 header#sidebar {
 	margin-left: 0;
-	width: 27%;
+	width: 20%;
 	min-width: 240px;
 	position: fixed;
 	min-height: 100%;
@@ -182,7 +182,7 @@ h1#blogname {
 }
 
 section#main {
-	margin-left: 27%;
+	margin-left: 20%;
 	min-width: 658px;
 	position: relative;
 	z-index: 10;
