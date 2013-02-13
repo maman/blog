@@ -1,0 +1,9 @@
+--- 
+title: foottest
+date: 14/02/2013
+description: asd
+
+That's some text with a footnote.[^1]
+
+[^1]: And that's the footnote.
+
