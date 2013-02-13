@@ -109,6 +109,7 @@ ul#meta li.blogname {
 
 ul#meta li.blogname h1 {
 	font-size: 1.563em;
+  font-family: Georgia, Times, "Times New Roman", serif;
 }
 
 ul#meta li.tagline {
@@ -208,6 +209,7 @@ section#main > article {
 article header h1 {
 	font-size: 1.3em;
 	line-height: 35px;
+  font-family: Georgia, Times, "Times New Roman", serif;
 }
 
 article.archive {
