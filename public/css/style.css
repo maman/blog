@@ -93,7 +93,7 @@ header#sidebar nav ul li a {
 
 aside#logo {
 	display: block;
-	margin: 40px 0 0 30px;
+	margin: 40px auto;
 	width: 110px;
 	height: 110px;
 	border-radius: 50%;
@@ -141,6 +141,7 @@ ul#meta li {
 
 ul#meta li.blogname {
 	margin-bottom: 0;
+  padding-left: 18px;
 }
 
 ul#meta li.blogname h1 {
@@ -149,6 +150,7 @@ ul#meta li.blogname h1 {
 
 ul#meta li.tagline {
 	margin-top: 0;
+  padding-left: 18px;
 }
 
 ul#meta li.tagline h2 {
@@ -367,8 +369,8 @@ article.hentry div.entry-content {
 		margin-left: 0;
 	}
 	aside#logo {
-		margin: 40px 0 0 30px;
-		width: 165px;
+		margin: 40px auto;
+    width: 165px;
 		height: 165px;
 	}
 	aside#logo div {
