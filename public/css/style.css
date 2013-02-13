@@ -91,7 +91,8 @@ ul#meta {
 	padding: 0;
 	margin-left: 30px;
   margin-top: 2.5em;
-	width: 75%;
+  max-width: 300px;
+	width: 65%;
 }
 
 ul#meta li {
@@ -332,11 +333,5 @@ article.hentry div.entry-content {
 }
 
 @media only screen and (min-width: 1300px) {
-	header#sidebar {
-		margin-left: 0;
-	}
-	ul#meta {
-		max-width: 300px;
-		width: 65%;
-	}
+
 }
