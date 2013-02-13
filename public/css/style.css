@@ -69,14 +69,6 @@ header#sidebar {
 	z-index: 1;
 }
 
-header#sidebar nav {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-
 header#sidebar nav ul {
 	margin: 0;
 	padding: 0;
@@ -93,43 +85,12 @@ header#sidebar nav ul li a {
 	padding-left: 30px;
 }
 
-aside#logo {
-	display: block;
-	margin: 40px auto;
-	width: 110px;
-	height: 110px;
-	border-radius: 50%;
-}
-
-aside#logo div {
-	border-radius: 50%;
-	background-color: white;
-	text-indent: -9999px;
-	margin: 0 auto;
-	width: 90px;
-	height: 90px;
-	margin-top: 10px;
-	clear: both;
-}
-
-aside#logo div a {
-	background-image: url(../img/logo_large.png);
-	display: block;
-	clear: both;
-	width: 78px;
-	height: 78px;
-	border-radius: 50%;
-	margin: 0 auto;
-	margin-top: 6px;
-	background: red url(../img/logo_large.png) center center no-repeat;
-	background-size: 100% 100%;
-}
-
 ul#meta {
 	clear: both;
 	margin: 0;
 	padding: 0;
 	margin-left: 30px;
+  margin-top: 2.5em;
 	width: 75%;
 }
 
@@ -371,21 +332,6 @@ article.hentry div.entry-content {
 @media only screen and (min-width: 1300px) {
 	header#sidebar {
 		margin-left: 0;
-	}
-	aside#logo {
-		margin: 40px auto;
-    width: 165px;
-		height: 165px;
-	}
-	aside#logo div {
-		width: 135px;
-		height: 135px;
-		margin-top: 15px;
-	}
-	aside#logo div a {
-		width: 117px;
-		height: 117px;
-		margin-top: 9px;
 	}
 	ul#meta {
 		max-width: 300px;
