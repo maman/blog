@@ -1,0 +1,12 @@
+--- 
+title: Neue Tabs for Safari 6
+date: 15/02/2013
+description: Tab mod for safari 6 based on Neue Tabs by Koshic
+
+![Neue Tabs ML](http://f.cl.ly/items/2K0a322A0m291Y1g0V0N/Screen%20Shot%202013-02-15%20at%201.36.27%20AM.png)
+
+Neue Tabs was originally a tab bar mod for safari 4, created by [Koshic](http://www.koshic.com). I found it while surfing [MacThemes Forum](http://macthemes.net/forum/), which recently being active again.  
+
+I took an effort to make it compatible with Safari 6.0.2 (which is the latest update of Safari). the ported themes can be downloaded [Here](http://cl.ly/Mv5t).  
+It only tested on Safari 6.0.2, which running on OSX 10.8.2 . don't forget to backup the original resources, and enjoy the mods. you're welcome.
+
