@@ -1,0 +1,32 @@
+--- 
+title: Automate Safari Reader
+date: 17/02/2013
+description: How to make news sites autoload in 'Reader Mode' automatically in Safari
+
+[Reader Mode]() is a features that remove bloat & ads in a page, makes reading news easier and more straight-forward.  
+however, Apple's default Reader Implementation suffer from these problems:
+
+* Inability to change default fonts & colors
+* Inability to auto-load Reader in certain sites
+* the 'semi-dark' background are distracting
+
+the [CustomReader](http://canisbos.com/customreader) extensions attempt to fix those problems, and adding some features to safari Reader.  
+
+![customReader](http://cl.ly/Mwyl/Screen%20Shot%202013-02-17%20at%2016.27.00.png)
+
+the most important features of CustomReader is the added ability to autoload Reader mode when you visit a site or reading a news. simply define the `regex` for the sites, e.g:  
+
+    //www\.theverge.com/\d{4}/\d/\d{2}/.*/.*
+    //arstechnica.com/.*/\d{4}/\d{2}/.*/
+    //www\.bbc.co.uk/.*/.*
+    //.*\.kompas.com/read/\d{4}/\d{2}/\d{2}/.+/*
+    //www\.republika.co.id/berita/.*/.*/\d{2}/.*
+    //www\.metrotvnews.com/.*/read/\d{4}/\d{2}/\d{2}/.*/.*
+
+inside the 'Auto-Read' tabs on the Custom Reader settings / Toolbar Button. there's examples to auto-load reader on [NYTimes' News](https://www.nytimes.com) and [MacWorld's News](http://www.macworld.com).  
+
+![Auto-Read Tabs](http://cl.ly/MxWZ/Screen%20Shot%202013-02-17%20at%2016.55.58.png)
+
+Before we finish, take a look at Basic & Advanced tabs. the Basic tabs let you tinker with the Font Family for both Title and Content, width of reader page, and more. However, if you're more adventurous, try the Advanced tabs-this give you absolute control of CSS used in Reader mode.
+
+
