@@ -12,7 +12,7 @@ however, Apple's default Reader Implementation suffer from these problems:
 
 the [CustomReader](http://canisbos.com/customreader) extensions attempt to fix those problems, and adding some features to safari Reader.  
 
-![customReader](http://cl.ly/Mwyl/Screen%20Shot%202013-02-17%20at%2016.27.00.png)
+![customReader](http://cl.ly/MyMe/Reader.png)
 
 the most important features of CustomReader is the added ability to autoload Reader mode when you visit a site or reading a news. simply define the `regex` for the sites, e.g:  
 
@@ -25,7 +25,7 @@ the most important features of CustomReader is the added ability to autoload Rea
 
 inside the 'Auto-Read' tabs on the Custom Reader settings / Toolbar Button. there's examples to auto-load reader on [NYTimes' News](https://www.nytimes.com) and [MacWorld's News](http://www.macworld.com).  
 
-![Auto-Read Tabs](http://cl.ly/MxWZ/Screen%20Shot%202013-02-17%20at%2016.55.58.png)
+![Auto-Read Tabs](http://cl.ly/My6r/Reader_Setting.png)
 
 Before we finish, take a look at Basic & Advanced tabs. the Basic tabs let you tinker with the Font Family for both Title and Content, width of reader page, and more. However, if you're more adventurous, try the Advanced tabs-this give you absolute control of CSS used in Reader mode.
 
