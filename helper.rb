@@ -11,19 +11,6 @@ module Toto
 			end
 		end
 	end
-	class Site
-		alias_method :old_go, :go
-
-		def go route, env = {}, type = :html
-			if not route.first =~ /\d{4}/ and route.size == 2 and route.last =~
-				@config[:id] = route.last.to_i
-				route.pop
-			end
-			ret = old_go route, env, type
-			@config.delete :id
-			ret
-		end
-	end
 	class Article < Hash
 		include Template
 

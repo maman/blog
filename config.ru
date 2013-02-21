@@ -1,10 +1,12 @@
 
 require 'toto'
+require 'rack/no-www'
 require File.expand_path('../helper', __FILE__)
 
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/img', '/font', '/favicon.ico'], :root => 'public'
 use Rack::CommonLogger
+use Rack::NoWWW
 
 if ENV['RACK_ENV'] == 'development'
   use Rack::ShowExceptions
@@ -19,8 +21,6 @@ toto = Toto::Server.new do
   set :markdown,  :smart
   set :disqus,    false
   set :summary,   :max => 1000, :delim => /%/
-  set :root,      "page"
-  set :articles,  5
   # set :ext,       'txt'                                   # file extension for articles
   # set :cache,      28800                                  # cache duration, in seconds
 end
