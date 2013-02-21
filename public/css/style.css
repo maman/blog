@@ -331,6 +331,6 @@ article.hentry div.entry-content {
   width: 400px;
 }
 
-@media only screen and (min-width: 1300px) {
-
+#disqus_thread {
+	width: 658px;
 }
