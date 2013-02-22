@@ -1,0 +1,88 @@
+--- 
+title: Controlling colors with LESSjs color functions
+date: 22/02/2013
+description: Explain how to use color functions in LESS js
+
+Less comes with handy color functions, that can easily be applied to colors in your CSS properties. This make your LESS files less bloated and easier to mantain.
+
+anyway, less comes by following color manipulation functions by default:
+
+    saturate();
+    desaturate();
+    lighten();
+    darken();
+    fadein();
+    fadeout();
+    spin();
+
+in additions, LESS also support Photoshop - Style layer blending, that will be explained later:
+
+    multiply();
+    screen();
+    overlay();
+    softlight();
+    hardlight();
+    difference();
+    exclusion();
+
+####Explanation
+
+here, I define the following color as variables, which will be defined as `@color`.
+
+    @color: #AD141E;
+
+defining colors as variables is important, because:
+
+1. It will be more easier and fluid.
+2. It helps to memorize colors, as the hex-formatted defaults tend to be harder to memorize.
+
+####Saturate and Desaturate
+
+Saturate and desaturate make a color more 'colorful' and 'grayscale'. this works by add / substract the Saturate part of [HSL](http://en.wikipedia.org/wiki/HSL_and_HSV).
+
+    saturate(@color, 30%);
+    desaturate(@color, 30%);
+
+![Saturate](http://cl.ly/N5wr/saturation.png)
+
+####Lighten and Darken
+
+These functions adjust the Light part of HSL, thus make the color lighter and darker, respectively.
+
+    lighten(@color, 30%);
+    darken(@color, 30%);
+
+![Light](http://cl.ly/N6QE/light.png)
+
+####Fadein and Fadeout
+
+Modifies the transparency. FadeIn increase the transparency, while fadeout decrease the transparency.
+
+    fadein(@color, 30%);
+    fadeout(@color, 30%);
+
+![Fade](http://cl.ly/N5v3/fade.png)
+
+####Spin
+
+Spin modifies the Hue part of HSL. the syntax is slightly different, which uses integers between 0 and 255 instead of percentages.
+
+    spin(@color, 100);
+
+![Spin](http://cl.ly/N5go/spin.png)
+
+####Summary
+
+By using these set of color functions, we can chain the functions, and achieve more advanced pattern or colors, for example:
+
+    background: @color;
+    border: 1px solid darken(@color, 15%);
+    box-shadow: inset 0 1px 1px lighten(@color, 15%),inset 0 -1px 1px darken(saturate(@color, 50%), 10%),0 3px 6px fadeout(@color, 25%);
+
+![Combined](http://cl.ly/N73F/combined.png)
+
+That way, you can only defineone colors, then let LESS to render the other colors. try to change `@colors` to other colors!
+
+Inspired by [Controlling Color With SASS Color Functions](http://robots.thoughtbot.com/post/12974565313/controlling-color-with-sass-color-functions) by Thoughtbot.  
+
+Some explanations taken from [Don't Read this CSS Tutorial](http://verekia.com/less-css/dont-read-less-css-tutorial-highly-addictive) by Verekia.
