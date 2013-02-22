@@ -15,17 +15,7 @@ anyway, less comes by following color manipulation functions by default:
     fadeout();
     spin();
 
-in additions, LESS also support Photoshop - Style layer blending, that will be explained later:
-
-    multiply();
-    screen();
-    overlay();
-    softlight();
-    hardlight();
-    difference();
-    exclusion();
-
-####Explanation
+###Explanation
 
 here, I define the following color as variables, which will be defined as `@color`.
 
