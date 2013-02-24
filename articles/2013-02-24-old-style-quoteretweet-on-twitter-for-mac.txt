@@ -3,6 +3,8 @@ title: Old style quote/retweet on Twitter for mac
 date: 24/02/2013
 description: enabling RT @ on twitter for mac
 
+did you ever wanted to use old style quote/retweet on Twitter.app ?
+
     defaults write com.twitter.twitter-mac QuoteTweetSyntax --string "RT @{USERNAME} {TEXT}"
 
 will do the trick. copy that line to terminal window, enter, and reopen Twitter.app.
