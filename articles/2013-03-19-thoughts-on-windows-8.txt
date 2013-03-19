@@ -1,0 +1,33 @@
+--- 
+title: Thoughts on Windows 8
+date: 19/03/2013
+description: Yeah, moving back to windows. I'm regret this :/
+
+So, long story short, I have some free msdn subscribtions from [my uni](http://machung.ac.id), and I'm tempted to Install the brand new, Metro styled windows 8. here's where the disaster begins.  
+
+As you readers know, I've been using OSX since maybe 4/5 months ago, and I'm comfortable with it. I means, what's better than a OS that do Photoshop, and being a full-fledged UNIX at a same time? I'm beginning to build up my own technique to getting things done. my favorite piece of app is [Codekit](http://incident57.com/codekit/). write the HTML & CSS/Less/SASS/SCSS in [SublimeText 2](http://sublimetext.com), save it, and let Codekit do the rest, and you didn't even touch the browser - CodeKit will magically refresh that. apart from that, I'm also a big fan of [Homebrew](http://mxcl.github.com/homebrew/), which enables me to run many UNIX apps on OSX. In terms of customization, my last desktop are featured on [Pixelfuckers](http://pixelfuckers.org/submissions/2087), and I made [some mods](http://blog.mahardi.me/2013/02/15/neue-tabs-for-safari-6/) for safari.  
+
+at first, I wasn't too excited with Windows 8, even though (almost) all of my friends started to use that (;_;) . the new lessons that I'm learned on my 4th semester, Object Oriented Programming requires me to install Visual Studio. and my hackintosh started to acting up due of the incompability (yes. It's a **hackintosh**, you know.) on the batteries. so, I plug my backup drive, backup all the things (I forgot to backup all photos of my high school days. fuuuuck.) fire up the Windows 8 Install CD, and install that OS.
+
+The Installer went smoothly, my laptop runs Windows now (now I remember that if I install BSD on this, I'll complete my journey for consumer OS :p.). create an accounts, and I went to login. Put the modem to the USB port, and it went online. I must admit that the new start screen is interesting. woot. disable that thing three hours later with [Start8](www.stardock.com/products/start8/), and install [ModernMix](http://www.stardock.com/products/modernmix/) to run Metro apps on desktop. anyone know ho to disable the metro completely ?
+
+I began to install SublimeText, and Visual Studio. also a couple games. I have [GRID](https://en.wikipedia.org/wiki/Race_Driver:_Grid) on this laptop. looove it. okay, out of topic, we're back now. Anyway, I want to experience UNIX on this OS. so, as I do sometime ago when I'm using Windows 7, I began to install [Cygwin](www.cygwin.com/). The install went smoothly, but the problems arise when I want to compile some libraries. the error is cryptic enough, so I copy-pasted and post it on google's searchbox. Bam, found the answer. apparently the permission configuration in Windows 8 is very,**very** different with Windows 8 (at first I just thought that Windows 8 is a Windows 7 with all flat appearance and a Metro apps slapped on top, but now, wow, Microsoft did a good job on this). fix that, and ready to go. there's one minus point in my book. Time goes on, I found one more things to disable. the ugly, space-taker Ribbon in the explorer. Easy, just use [Ribbon Disabler](http://hb860.deviantart.com/art/Ribbon-Disabler-for-Windows-8-298650780). As for the music player, I'm going pretty hardcore by install MPD and Ncmpcpp from [Ahodesuka's Build Scripts](https://github.com/ahodesuka/getmpd), and use [MpdScribble](http://mpd.wikia.com/wiki/Client:Mpdscribble) (again, with Cygwin) to scrobble the songs to [Last.fm](http://last.fm/user/maman__)
+
+The problems come again when I'm at work. a client just requested to redesign the whole site. I built half of the redesign when I'm still use OSX, built it with HTML, LESS and with Git as the version control. the whole things is placed on [Dropbox](http://dropbox.com), so I have the files in no-time by just install Dropbox in my new Windows 8. Git? no problem, I'll just let Cygwin to handle that. the problem is, LESS and the comfort of having my LESS compiled and the browser window auto-refreshed when I save the HTML and LESS files. I miss that. 
+
+So, after some research on the Internet, turns out that SublimeText can handle all of that. what an amazing piece of software. the trick is:
+
+* Install SublimeText2, along with the [Package Manager](http://wbond.net/sublime_packages/package_control)
+* Install [Less2CSS](https://github.com/timdouglas/sublime-less2css) and [LiveReload](https://github.com/dz0ny/LiveReload-sublimetext2) package.
+* Configure Less2css to point the correct directory (there's a guide on the GitHub page, don't be lazy). Note that Less2CSS come with their own LESS Compiler on windows, so just use it.
+* Last, Install [LiveReload browser extensions](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei). (I use chrome)
+
+One more minus on my book, because the trickiness. Why isn't there a CodeKit for Windows ? :( Help me, shoot an email to the developers to request this :3  
+
+Beside the workflow, I'm also used to [Slate](https://github.com/jigish/slate) Window Manager when I'm on OSX back then. so, after reading some of [/w/'s Desktop Customization Guide](http://pastebin.com/W0SsUtEH) - especially the tiling window manager section, I make up an AHK Scripts to mimic my Slate Config. Get it [here](https://gist.github.com/maman/5180746). Now, here's my Desktop looks like now:
+
+![Windows 8 Desktop](http://cl.ly/NcMQ/FFFFUUUUU.jpg)
+
+Exciting, eh. I know, I'm going too far by removing the border. I'm using Alt + Drag to move the window, however.
+
+So that's my review, and my life with Windows 8 up until now. there's two - or maybe three minus points in my book. let's hope that the number didn't increase.
