@@ -1,0 +1,19 @@
+--- 
+title: The three months log
+date: 03/06/2013
+description: my most important events in april, may, and june this year.
+
+start posting again after three-months hiatus.  
+
+![gifs](http://cl.ly/PM53/RAGS.gif)
+
+1. I'm back on OSX!
+2. I made two projects for my task at the Uni - [GolekKewan](http://github.com/maman/Golek-Kewan) and [ABCee!](http://abcee.mahardi.me)
+3. I made my own safari extension for [dotCSS](https://github.com/stewart/dotcss), avalaible from [here](https://github.com/maman/dotcss.safariextension)
+4. Made a switch from [LESS]() to [SASS](). mainly because I *can*.
+5. Discovered [this](http://payungteduh.blogspot.com) band. you should check out *'Untuk Perempuan yang sedang di pelukan'* and *'Berdua Saja'*.
+6. Start blogging stuff again!
+
+That's it, folks. 
+
+by the way, there's new Codekit alternative for windows called [Prepros](http://alphapixels.com/prepros/). finally. you should check it, **fast**.
