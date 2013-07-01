@@ -1,0 +1,33 @@
+--- 
+title: Import bookmarks to Readability
+date: 01/07/2013
+description: steps to import browser bookmarks to Readability
+
+Readability is a service to turns a webpage article into a comfortable reading view, ready to read on your kindle, e-reader, or app (I'm using [ReadKit](http://readkitapp.com) personally to manage my news stream).  
+
+Readability provide an [array of tools](http://www.readability.com/apps) to view the current web page. As for developers, [their API documentation](http://www.readability.com/developers/api) is a complete resources.  
+
+I'm using [kippt](http://kippt.com) before to managing my bookmark &mdash; their service is *good enough*, but after their recent changes on interfaces, I found that their services become bloated. the Readability-style previews are nice, but it's cannot be compared with the original Readability. lucky there's options to export my existing bookmarks &mdash; you can find it [here](Export Links - Kippt) &mdash; in the forms of browser bookmarks lists.  
+
+the problem is, Readability doesn't support importing from bookmarks list. API's also doesn't support importing. but there's still one way that we can import our bookmarks &mdash; by using Readability's [Add via Email](http://www.readability.com/account/email) features.  
+
+Enter [readability_importer] &mdash; a rubygems to batch-import URL's to Readability by using Readability's Add Via Email features. but we cannot directly process the raw bookmarks we exported from kippt before, as the formats are messy. don't worry, the steps below will guide you
+
+###Requirements
+1. Unix-based OS &mdash; or windows with [cygwin](http://www.cygwin.com)
+2. Ruby and Rubygems &mdash; this is installed by default on OSX &mdash; you should find howto for another OSes easily on google.
+3. Lynx &mdash; avalaible via [Homebrew](http://mxcl.github.io/homebrew/) or [MacPorts](http://www.macports.org), also should be avalaible in your linux distros' repository.
+4. Readability's email address &mdash; you can find yours [here](http://www.readability.com/account/email). Remember, **this is different from your Readability login email!**
+
+###The Steps
+
+1. Export the [kippt bookmarks that you've collected](http://kippt.com/extras/export) &mdash; or your browser bookmarks into a file.
+2. open the terminal, and run `gem install readability_importer`
+3. run `lynx -dump -listonly YOUR-BOOKMARK-FILE.html | sed "s/^ *[0-9]*. //g" | sed '1,3d' > list.txt`
+4. now, we have the file `list.txt` &mdash; a list of nicely formatted links, ready to be imported using readability_importer.
+5. import the bookmark to Readability by running `readability_importer import --email-address=YOUR-READABILITY-EMAIL --urls=$(cat list.txt)`
+6. Now your bookmarks are being imported into readability.
+
+Now, you have your bookmarks imported to readability. one weakness, though. Readability won't play nice if you bookmark the homepage.  
+
+Happy Reading!
