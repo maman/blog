@@ -5,12 +5,13 @@
 
 body {
 	font-size: 12pt;
+	font-family: Palatino, Georgia, Times, "Times New Roman", serif;
 	background: white;
+	-webkit-hyphens: auto;
 }
 
 a {
 	text-decoration: none;
-	color: blue !important;
 }
 
 a:after {
@@ -20,8 +21,7 @@ a:after {
 
 code, pre {
 	font-family: monospace;
-	font-size: 10pt;
-	border-bottom: 1px dashed black;
+	font-weight: bold;
 }
 
 ol, ul {
@@ -32,7 +32,7 @@ ol, ul {
 }
 
 ol li, ul li {
-	margin: 5px 0 5px 0;
+	margin: 5pt 0 5pt 0;
 }
 
 #sidebar, #main {
@@ -73,7 +73,7 @@ ol li, ul li {
 }
 
 #main {
-	font-size: 12pt;
+	font-size: 16pt;
 }
 
 #main #lupd {
@@ -95,11 +95,11 @@ ol li, ul li {
 }
 
 #main .hentry h1 {
-	text-align: center;
 	font-size: 24pt;
 	font-weight: bold;
 	position: relative;
 	padding: 10px 0 5px 0;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 #main .hentry h1:after {
@@ -117,8 +117,6 @@ ol li, ul li {
 	width: 100%;
 	height: auto;
 	display: block;
-	text-align: center;
-	font-style: italic;
 	margin-bottom: 20px;
 	font-size: 10pt;
 }
@@ -128,9 +126,17 @@ ol li, ul li {
 	margin-right: 5px;
 }
 
-.entry-content p {
-	line-height: 14pt;
+.entry-content p, .entry-content li {
+	line-height: 23pt;
 	margin-bottom: 12pt;
+}
+
+.entry-content li {
+	margin-bottom: 0;
+}
+
+.entry-content li:first-child {
+	margin-top: 12pt;
 }
 
 .entry-content h3 {
@@ -139,14 +145,50 @@ ol li, ul li {
 	margin-top: 15px;
 	margin-bottom: 5px;
 	line-height: normal;
+	font-family: Helvetica, Arial, sans-serif;
 }
-
-.entry-content a:after {
+.entry-content .is-link {
+	position: relative;
+	padding-right: 15px;
+}
+.entry-content .is-link .top {
+	position: absolute;
+	top: -10px;
+	right: -2px;
+	font-size: 8pt;
+	color: #00F !important;
+}
+/*.entry-content a:after {
 	content: "\2014  "attr(href) !important;
 	color: #00fd;
 	font-size: inherit;
 	margin-left: 3px;
-	font-style: italic !important;
+}*/
+
+.entry-content a[href^=http]:after {
+	content:" <" attr(href) ">";
+}
+
+.link-list {
+	position: relative;
+	padding-top: 28pt;
+	font-size: 12pt;
+}
+
+.link-list:before {
+	position: absolute;
+	top: 12pt;
+	left: 0;
+	content: 'References';
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 18pt;
+}
+
+.link-list li {
+	margin-bottom: 0;
+	line-height: 16pt;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 .comment {

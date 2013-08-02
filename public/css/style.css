@@ -268,6 +268,22 @@ article.hentry div.entry-content {
 	margin-left: 5px;
 }
 
+.entry-content a {
+	border-bottom: none;
+}
+
+.entry-content .is-link {
+	position: relative;
+	padding-right: 15px;
+}
+.entry-content .is-link .top {
+	position: absolute;
+	top: -13px;
+	right: 0;
+	font-size: 8pt;
+	border-bottom: 1px solid #ECECEC;
+}
+
 .entry-content p {
 	margin-bottom: 15px;
 }
@@ -329,6 +345,28 @@ article.hentry div.entry-content {
 .entry-content img {
   max-width: 400px;
   width: 400px;
+}
+
+.link-list {
+	position: relative;
+	padding-top: 28px;
+	font-size: 12pt;
+}
+
+.link-list:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: 'References';
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.link-list li {
+	margin-bottom: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
 }
 
 #disqus_thread {
