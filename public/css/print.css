@@ -1,0 +1,154 @@
+* {
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+body {
+	font-size: 12pt;
+	background: white;
+}
+
+a {
+	text-decoration: none;
+	color: blue !important;
+}
+
+a:after {
+	content: '' !important;
+	font-size: 11pt;
+}
+
+code, pre {
+	font-family: monospace;
+	font-size: 10pt;
+	border-bottom: 1px dashed black;
+}
+
+ol, ul {
+	margin: 0;
+	padding-left: 25px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+ol li, ul li {
+	margin: 5px 0 5px 0;
+}
+
+#sidebar, #main {
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+#sidebar {
+	font-size: .8em;
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+	margin-bottom: 25px;
+	margin-top: 30px;
+}
+
+#sidebar a {
+	color: black !important;
+}
+
+#sidebar ul {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+#sidebar ul li {
+	display: inline-block;
+	margin: 0;
+}
+
+#sidebar #tagline, #sidebar .website, #sidebar .email, #main #lupd, nav {
+	display: none;
+}
+
+#sidebar #blogname:after {
+	margin-left: 5px;
+	content: "-";
+}
+
+#main {
+	font-size: 12pt;
+}
+
+#main #lupd {
+	display: none;
+}
+
+#main .hentry {
+	padding-bottom: 150px;
+	position: relative;
+}
+
+#main .hentry:after {
+	position: absolute;
+	bottom: 0;
+	width: 100px;
+	margin-left: -50px;
+	left: 50%;
+	content: url(https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=http://blog.mahardi.me&choe=UTF-8);
+}
+
+#main .hentry h1 {
+	text-align: center;
+	font-size: 24pt;
+	font-weight: bold;
+	position: relative;
+	padding: 10px 0 5px 0;
+}
+
+#main .hentry h1:after {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	display: block;
+	width: 120px;
+	height: 120px;
+	margin-left: -60px;
+}
+
+#main .hentry time {
+	position: relative;
+	width: 100%;
+	height: auto;
+	display: block;
+	text-align: center;
+	font-style: italic;
+	margin-bottom: 20px;
+	font-size: 10pt;
+}
+
+#main .hentry time:before {
+	content: "Published on";
+	margin-right: 5px;
+}
+
+.entry-content p {
+	line-height: 14pt;
+	margin-bottom: 12pt;
+}
+
+.entry-content h3 {
+	font-size: 16pt;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	line-height: normal;
+}
+
+.entry-content a:after {
+	content: "\2014  "attr(href) !important;
+	color: #00fd;
+	font-size: inherit;
+	margin-left: 3px;
+	font-style: italic !important;
+}
+
+.comment {
+	display: none;
+}
