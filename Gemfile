@@ -6,3 +6,5 @@ gem "typogruby"
 gem "hpricot"
 gem "toto"
 gem "rack-no-www"
+
+ruby '1.9.2'
