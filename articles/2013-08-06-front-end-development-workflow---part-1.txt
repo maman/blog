@@ -1,0 +1,35 @@
+--- 
+title: Front-End Development Workflow - part 1
+date: 06/08/2013
+description: My series of front-end dev workflow article
+
+
+I've been refining and improving my workflow throughout this year. I'm also learning some new framework and preprocessor &mdash; especially [LESS](http://lesscss.org), [SASS](http://sass-lang.com), and began to use [Zurb Foundation](http://foundation.zurb.com) in one of our web-app project at [Nanomites](http://nanomit.es). Here's what I do to improve my front-end development process :
+
+###Languages / Frameworks
+
+* [SASS](http://sass-lang.com)/[Compass](http://compass-style.org) &mdash; I've began with [LESS](http://lesscss.org), but i find that SASS is more 'semantics' and complete. Along with [SASS source maps](http://snugug.com/musings/debugging-sass-source-maps) (which I'll cover in the part 2 of the series), This is the game-changer in my development workflow.
+* [Zurb Foundation](http://foundation.zurb.com) &mdash; I began to use Foundation in one of our projects at Nanomites, and been fascinated by this framework ever since. Easy to expand and scale, modular, and the [Documentation](http://foundation.zurb.com/docs/) is one of the best docs I ever read. Foundation doesn't have as many widgets or component as [Twitter Bootstrap](http://twitter.github.io/bootstrap/), but each widgets or components are finely crafted, and easy to create a new components as you wish. Also a built-in [Compass integration](http://foundation.zurb.com/docs/sass.html), makes any compass functions and helpers can be used in Foundation.
+* Command - Line &mdash; I beginning to learn about shell-scripting earlier this year, and made a [Function]() for my shell to streamline the project creation as a result.
+
+###Tools
+
+* [Sublime Text](http://www.sublimetext.com/3) &mdash; Currently I'm using Sublime Text 3 for nearly all editing / coding needs. It's noticeably faster than the predecessor, and [nearly all extensions](https://github.com/wbond/sublime_package_control/wiki/Sublime-Text-3-Compatible-Packages) have been ported to support this version. Some of the most important extensions for my workflow is [Emmet](https://github.com/sergeche/emmet-sublime), [SidebarEnhancement](https://github.com/titoBouzout/SideBarEnhancements), and [Sass](https://github.com/nathos/sass-textmate-bundle). 
+* [Vim](http://www.vim.org) &mdash; Vim is my choice when I'm editing files inside the terminal. definitely faster, but have a steep learning process if you want to exploit all the features. 
+* [Chrome Dev Branch](http://www.chromium.org/getting-involved/dev-channel) &mdash; Chrome Developer Tools is one of the essential things that I can't live without. Also, it's got [support for SASS/SCSS source maps natively](https://developers.google.com/chrome-developer-tools/docs/css-preprocessors), and if you want to directly debug and design inside the browser, you might find [Chrome Devtools Autosave](https://github.com/NV/chrome-devtools-autosave) plugin by [Nikita Vasilyev](http://elv1s.ru/) indispensable. Also, make sure you [learn the inside throughly](http://jtaby.com/2012/04/23/modern-web-development-part-1.html) because it's got many great things under the hood. By the way, I'm not using the 'Canary' chrome because, you know, the yellow icon is ugly :/
+* [Codekit](https://incident57.com/codekit/) &mdash; to auto-compile the SASS/LESS I'm working on, and automatically refresh the browser in the process. I change some settings to make codekit more integrated to my workflow, which I'll cover in the next post.
+* [ImageOptim](http://imageoptim.com) &mdash; compress image assets. Codekit got it's own image compression, but I find ImageOptim are more optimized, and the result is smaller.
+* [Dash](https://itunes.apple.com/us/app/dash-docs-snippets/id458034879?mt=12) &mdash; Offline docs browser for SASS, LESS, jQuery, etc.
+* [Anvil](http://anvilformac.com/) &mdash; the friendly GUI for [37Signal's](http://37signals.com) [Pow](http://pow.cx) that lives in the menubar. Lets you host local websites for testing/preview with `.dev` domains and access them from the network, thanks to deep [`xip.io`](http://xip.io) integration.
+* [VirtualBox](https://www.virtualbox.org)/[IEVMs](https://github.com/xdissent/ievms)/[Vagrant](http://www.vagrantup.com) &mdash; streamlined IE Testing via VirtualBox. streamlined install of IE 6 through 10, so you can test your design throughly. by the way, IEVMs is a whopping 15GB in size, so make sure you got the room. Also if I want to play with API's or simply want to toy with something UNIX-related, I spun a Vagrant instance, and delete it afterwards.
+* [Dropbox](https://www.dropbox.com) &mdash; The most important. I got all of my Uni-related docs, my Highschool study archive, and all of my work inside. so If I get a new laptop or have been reinstalling, This is the thing I install first.
+
+###Other Indispensable things
+
+* [iTerm](http://www.iterm2.com/) &mdash; a Terminal emulator for mac. definitely better than `Terminal.app`.
+* [Alfred](http://www.alfredapp.com/) &mdash; my app launcher. the 'workflow' features in the version 2 is great.
+* [Slate](https://github.com/jigish/slate) &mdash; Slate is by far the most excellent Window Manager for me. It's configurable via dotfiles, and scriptable. definitely the Hacker's choice.
+* [Cloudapp](http://getcloudapp.com) &mdash; when I want to share something to my client that doesn't need to be installed/reviewed throughly, e.g site previews/sketches.
+
+More about my configurations will be throughly reviewed in the next post, including how I use SASS' Source Maps feature inside codekit, my project skeleton script, etc.
+if you got questions, drop a comments below.
