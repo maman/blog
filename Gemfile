@@ -7,4 +7,4 @@ gem "hpricot"
 gem "toto"
 gem "rack-no-www"
 
-ruby '1.9.2'
+ruby '1.8.7'
