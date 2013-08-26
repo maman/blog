@@ -48,7 +48,7 @@
       </ul>
     </nav>-->
   </header>
-  <section id="main">
+  <section id="main" data-pjax-container>
     <%= yield %>
   </section>
   <script type="text/javascript">
@@ -62,8 +62,10 @@
     })();
   </script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js"></script>
+  <script src="/js/zepto.pjax.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"></script>
   <script>
+    $('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])').pjax('[data-pjax-container]')
     $(document).ready(function() {
       $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
     })
