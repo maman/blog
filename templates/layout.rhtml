@@ -35,7 +35,7 @@
       </div>
     </aside>-->
     <ul id="meta">
-      <li class="blogname"><h1 id="blogname"><a href="/" title="Welcome">Achmad Mahardi</a></h1></li>
+      <li class="blogname"><h1 id="blogname"><a href="/" title="Welcome" data-skip-pjax>Achmad Mahardi</a></h1></li>
       <li class="tagline"><h2 id="tagline">I craft webpages.</h2></li>
       <li class="website link"><a href="/archives" title="Previous Post">archive</a></li>
       <li class="website link"><a href="/about" title="About Me">about</a></li>
@@ -61,21 +61,14 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.7.0/jquery.pjax.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"></script>
   <script src="/js/plugins.js"></script>
   <script>
     $('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])').pjax('[data-pjax-container]');
+    $(document).on('pjax:send', $.zprogress.start).on('pjax:complete', $.zprogress.done);
     $(document).ready(function() {
       $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
-    });
-    $(document).on('pjax:send', function() {
-      NProgress.start();
-    });
-    $(document).on('pjax:complete', function() {
-      NProgress.done();
-      NProgress.remove();
     });
   </script>
 </body>
