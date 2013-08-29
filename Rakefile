@@ -36,7 +36,7 @@ end
 desc "Test blog locally."
 task :test do
   toto "Testing local"
-  `unicorn`
+  `rackup`
 end
 
 def toto msg
