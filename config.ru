@@ -22,7 +22,7 @@ toto = Toto::Server.new do
   # set :date,      lambda {|now| now.strftime("%d/%m/%Y") }
   set :date,      lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
   set :markdown,  :smart
-  set :disqus,    "personal-blahg"
+  # set :disqus,    "personal-blahg"
   set :summary,   :max => 1000, :delim => /%/
   # set :ext,       'txt'                                   # file extension for articles
   # set :cache,      28800                                  # cache duration, in seconds
