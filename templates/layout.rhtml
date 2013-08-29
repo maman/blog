@@ -65,7 +65,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"></script>
   <script src="/js/plugins.js"></script>
   <script>
-    $('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])').pjax('[data-pjax-container]');
+    $(document).pjax('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])','[data-pjax-container]');
     $(document).on('pjax:send', $.zprogress.start).on('pjax:complete', $.zprogress.done);
     $(document).ready(function() {
       $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
