@@ -22,7 +22,6 @@
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css" media="screen">
   <link rel="stylesheet" href="/css/extra.css" media="screen">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen">
   <link rel="stylesheet" href="/css/github.css" media="screen" />
   <link rel="stylesheet" href="/css/print.css" media="print" />
   <script src="/js/libs/prefixfree.min.js"></script>
@@ -35,7 +34,7 @@
       </div>
     </aside>-->
     <ul id="meta">
-      <li class="blogname"><h1 id="blogname"><a href="/" title="Welcome" data-skip-pjax>Achmad Mahardi</a></h1></li>
+      <li class="blogname"><h1 id="blogname"><a href="/" title="Welcome">Achmad Mahardi</a></h1></li>
       <li class="tagline"><h2 id="tagline">I craft webpages.</h2></li>
       <li class="website link"><a href="/archives" title="Previous Post">archive</a></li>
       <li class="website link"><a href="/about" title="About Me">about</a></li>
@@ -67,11 +66,18 @@
   <script>
     $(document).pjax('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])','[data-pjax-container]');
     $(document).on('pjax:send', function() {
-      $.zprogress.start();
+      $.zprogress.start()
     });
     $(document).on('pjax:complete', function() {
       $.zprogress.done();
+      $.scrollTo({
+        endY: 0,
+        duration: 100
+      });
     });
+    $(document).on('pjax:timeout', function(event) {
+      event.preventDefault()
+    })
     $(document).ready(function() {
       $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
     });
