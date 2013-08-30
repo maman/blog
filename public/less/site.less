@@ -73,36 +73,36 @@
 @accent: #000000;
 @red: #FF0000;
 // Responsive Check
-body {
-    &:after { /*This adds a label in the top-left corner that displays the current media query state.*/
-    background: red;
-    color: white;
-    content: "undefined";
-    left: 0;
-    .opacity(80);
-    padding: .5em 1em;
-    position: fixed;
-    text-align: center;
-    top: 0;
-    z-index: 99;
-    @media @mobile {
-      background: orange;
-      content: "mobile";
-    }
-    @media @tablet {
-      background: purple;
-      content: "tablet";
-    }
-    @media @desktop {
-      background: green;
-      content: "desktop";
-    }
-    @media @desktop-xl {
-      background: blue;
-      content: "desktop-xl";
-    }
-  }
-}
+// body {
+//     &:after { /*This adds a label in the top-left corner that displays the current media query state.*/
+//     background: red;
+//     color: white;
+//     content: "undefined";
+//     left: 0;
+//     .opacity(80);
+//     padding: .5em 1em;
+//     position: fixed;
+//     text-align: center;
+//     top: 0;
+//     z-index: 99;
+//     @media @mobile {
+//       background: orange;
+//       content: "mobile";
+//     }
+//     @media @tablet {
+//       background: purple;
+//       content: "tablet";
+//     }
+//     @media @desktop {
+//       background: green;
+//       content: "desktop";
+//     }
+//     @media @desktop-xl {
+//       background: blue;
+//       content: "desktop-xl";
+//     }
+//   }
+// }
 // Layout
 html {
     height: 100%;

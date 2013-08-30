@@ -367,46 +367,6 @@ table {
   font-weight: normal;
   font-style: normal;
 }
-body:after {
-  /*This adds a label in the top-left corner that displays the current media query state.*/
-
-  background: red;
-  color: white;
-  content: "undefined";
-  left: 0;
-  -webkit-opacity: 80;
-  -moz-opacity: 80;
-  opacity: 80;
-  padding: .5em 1em;
-  position: fixed;
-  text-align: center;
-  top: 0;
-  z-index: 99;
-}
-@media only screen and (max-width: 529px) {
-  body:after {
-    background: orange;
-    content: "mobile";
-  }
-}
-@media only screen and (min-width: 530px) and (max-width: 949px) {
-  body:after {
-    background: purple;
-    content: "tablet";
-  }
-}
-@media only screen and (min-width: 950px) and (max-width: 1128px) {
-  body:after {
-    background: green;
-    content: "desktop";
-  }
-}
-@media only screen and (min-width: 1129px) {
-  body:after {
-    background: blue;
-    content: "desktop-xl";
-  }
-}
 html {
   height: 100%;
   width: 100%;
