@@ -732,15 +732,9 @@ code {
 #main article.hentry .entry-content pre code {
   font-size: 0.8em;
 }
-#main article.hentry .entry-content blockquote:before {
-  content: '\2192';
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: rgba(255, 0, 0, 0.9);
-}
 #main article.hentry .entry-content blockquote {
-  padding-left: 30px;
+  padding-left: 0;
+  margin-left: 0;
   position: relative;
   font-style: italic;
   font-family: Georgia, Times, "Times New Roman", serif;
