@@ -7,5 +7,6 @@ gem "typogruby"
 gem "hpricot"
 gem "rack-no-www"
 gem "rack-pjax"
+gem "unicorn"
 
 ruby '1.9.3'
