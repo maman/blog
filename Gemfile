@@ -8,4 +8,4 @@ gem "toto"
 gem "rack-no-www"
 gem "rack-pjax"
 
-ruby '1.9.2'
+ruby '1.9.3'
