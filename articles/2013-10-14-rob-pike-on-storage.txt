@@ -1,0 +1,8 @@
+--- 
+title: Rob Pike on storage
+date: 14/10/2013
+description: the sayings about storage by Rob Pike
+
+>I want no local storage anywhere near me other than maybe caches. No disks, no state, my world entirely in the network. Storage needs to be backed up and maintained, which should be someone else’s problem, one I’m happy to pay to have them solve. 
+
+FYI, Rob Pike is the author of [Plan 9](http://plan9.bell-labs.com/plan9/), the revolutionary &mdash; but underrated and unsuccesful Operating System architecture. Today, it's exists on UNIX-like machine as [Plan 9 from Userspace](http://swtch.com/plan9port/).
