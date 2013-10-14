@@ -17,6 +17,12 @@
   <meta name="description" content="<%= @context[:description] || 'Blog of Achmad Mahardi' %>" />
   <meta name="author" content="<%= @config[:author] %>">
   <meta name="viewport" content="width=device-width">
+  <% unless @context[:description].nil? %>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@achmadmahardi">
+    <meta name="twitter:title" content="<%= @context[:title] %>">
+    <meta name="twitter:description" content="<%= summaryText %>">
+  <% end %>
   <link rel="icon" href="/favicon.ico">
   <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
   <!-- <link rel="stylesheet" href="/css/reset.css">

@@ -21,5 +21,9 @@ module Toto
 		def datetime
 			lambda {|now| now.strftime("%B %d, %Y") }.call(self[:date])
 		end
+
+		def summaryText
+			Nokogiri::HTML(summary).text
+		end
 	end
 end
