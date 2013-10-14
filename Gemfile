@@ -1,10 +1,10 @@
 source "http://rubygems.org"
 
 gem "builder"
-gem "rdiscount"
+gem "toto"
+gem "rdiscount", "~> 2.1.7"
 gem "typogruby"
 gem "hpricot"
-gem "toto"
 gem "rack-no-www"
 gem "rack-pjax"
 
