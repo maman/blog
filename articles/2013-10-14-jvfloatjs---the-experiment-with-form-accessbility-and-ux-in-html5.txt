@@ -6,7 +6,7 @@ description: I recently discovered the Mobile Form Interaction - http://dribbble
 
 HTML5 input `placeholder` attribute is the most amazing improvement on input element's interaction. It's able to tell what the `input` means &mdash; and can be used as `label` replacement. However, when we use `input` without `label`, the user won't know what the `input` means, because the `placeholder` text is removed when the user insert some text to the `input`.  
 
-Dribbble user [Matt D. Smith]() proposed the fix for the `placeholder` visibility:
+Dribbble user [Matt D. Smith](http://dribbble.com/mds) proposed the fix for the `placeholder` visibility:
 
 [![GIF mobile form Interaction](http://dribbble.s3.amazonaws.com/users/6410/screenshots/1254439/form-animation-_gif_.gif)](http://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction?list=users)
 
