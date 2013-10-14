@@ -71,13 +71,12 @@
         endY: 0,
         duration: 100
       });
+      $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
     });
     $(document).on('pjax:timeout', function(event) {
       event.preventDefault()
     })
-    $(document).ready(function() {
-      $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
-    });
+    $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
   </script>
 </body>
 </html>
