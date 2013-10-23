@@ -67,6 +67,9 @@
     });
     $(document).on('pjax:complete', function() {
       $.zprogress.done();
+      if( window._gaq ) {
+        _gaq.push(['_trackPageview', window.location.href]);
+      }
       $.scrollTo({
         endY: 0,
         duration: 100
