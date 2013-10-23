@@ -1,0 +1,12 @@
+---
+title: On Goverment's Openess on Tech
+date: 23/10/2013
+description: My opinions about washingtonpost's article on http://www.washingtonpost.com/blogs/wonkblog/wp/2013/10/21/the-way-government-does-tech-is-outdated-and-risky/
+
+>Another is the openness of the software development process: While the front end of the Web site was developed open source, CGI Federal's backend was entirely secret, which meant that coders couldn't crawl around and help spot bugs. As Bloomberg Businessweek outlined, posting the code on Github would have brought a community of people out to fix problems before they got so deeply embedded that there was no way to extract them.
+
+<small>Washington Post &mdash; [“The way goverment does tech is outdated and risky”](http://www.washingtonpost.com/blogs/wonkblog/wp/2013/10/21/the-way-government-does-tech-is-outdated-and-risky/)</small>
+
+yes, I've realized that [Github](http://github.com) is a big thing now, but please don't ever put anything production-related there, especially for the **goverment**.  
+Just don't. 
+
