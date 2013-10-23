@@ -1,5 +1,5 @@
 ---
-title: On Goverment's Openess on Tech
+title: On Goverment's Openess in Tech
 date: 23/10/2013
 description: My opinions about washingtonpost's article on http://www.washingtonpost.com/blogs/wonkblog/wp/2013/10/21/the-way-government-does-tech-is-outdated-and-risky/
 
