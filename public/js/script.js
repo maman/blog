@@ -1,21 +1,26 @@
 /* Author: Achmad Mahardi
-
 */
 
-// $(document).ready(function() {
-// 	var linkTemplate = "<div class='entry-content'><ol class='link-list'></ol></div>";
-// 	$(linkTemplate).insertAfter('.entry-content');
-// 	appendLinks();
-// });
-
-// function appendLinks() {
-// 	$('.entry-content a').each(function(linkId) {
-// 		var oldLink = $(this).attr('href');
-// 		// var linkHref = $(this).attr('href');
-// 		var count = linkId + 1;
-// 		$(this).attr('href', '#d' + count);
-// 		$(this).addClass('is-link');
-// 		$(this).append("<span class='top'>["+count+"]</span>");
-// 		$('.link-list').append("<li id='d"+count+"'><a href='"+oldLink+"'>"+oldLink+"</a>");
-// 	});
-// }
+$(document).pjax('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])','[data-pjax-container]');
+$(document).on('pjax:send', function() {
+  $.zprogress.start();
+  // $('.blogname').addClass('loadPage');
+  $('#main').addClass('pageAnim');
+});
+$(document).on('pjax:complete', function() {
+  $.zprogress.done();
+  // $('.blogname').removeClass('loadPage');
+  $('#main').removeClass('pageAnim');
+  if( window._gaq ) {
+    _gaq.push(['_trackPageview', window.location.href]);
+  }
+  $.scrollTo({
+    endY: 0,
+    duration: 100
+  });
+  $('pre code').each(function(i, e) {hljs.highlightBlock(e);});
+});
+$(document).on('pjax:timeout', function(event) {
+  event.preventDefault();
+});
+$('pre code').each(function(i, e) {hljs.highlightBlock(e);});
