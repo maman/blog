@@ -1,36 +1,19 @@
-<header id="lupd">
-  Published on <time datetime="<%= dateUTC %>"><%= datetime %></time>
-</header>
-<article class="hentry">
-  <header>
-    <h1 class="entry-title"><%= title %></h1>
-    <time class="updated visuallyhidden" datetime="<%= dateUTC %>" pubdate><%= datetime %></time>
-  </header>
-  <div class="entry-content">
-    <%= body %>
-  </div>
-</article>
-<% if @config[:disqus] %>
-<div class="comment">
-  <div id="disqus_thread"></div>
-  <script type="text/javascript" src="http://disqus.com/forums/<%= @config[:disqus] %>/embed.js"> </script>
-  <noscript><a href="http://<%= @config[:disqus] %>.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-</div>
-<% end %>
-<nav>
-  <ul>
-    <li><a href="/" title="Back">Back to blog</a></li>
-    <li><a class="btn" href="https://twitter.com/share?url=http://blog.mahardi.me<%= article.path %>&text=<%= title %> by @achmadmahardi&count=horizontal" target="_blank" rel="nofollow">Tweet</a></li>
-  </ul>
-</nav>
+<body class="post-template">
+<main class="content" role="main">
+    <article class="post">
+        <% if !image.nil? %>
+            <header class="post-header" style="background-image: url('<%= image %>')"></header>
+        <% else %>
+            <header class="post-header">
+        <% end %>
+            <a class="blog-logo" href="/"><img src="http://placehold.it/256x256" alt="Blog Logo" /></a>
+        </header>
+        <span class="post-meta"><time datetime="<%= dateUTC %>"><%= datetime %></time></span>
 
-<!--<article class="post">
-  <section class="comments">
-    <% if @config[:disqus] %>
-      <div id="disqus_thread"></div>
-      <script type="text/javascript" src="http://disqus.com/forums/<%= @config[:disqus] %>/embed.js"> </script>
-      <noscript><a href="http://<%= @config[:disqus] %>.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-    <% end %>
-  </section>
-</article>-->
+        <h1 class="post-title"><%= title %></h1>
+
+        <section class="post-content">
+            <%= body %>
+        </section>
+    </article>
+</main>

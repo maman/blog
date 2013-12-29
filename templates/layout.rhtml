@@ -1,8 +1,5 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <title>
@@ -16,7 +13,7 @@
   </title>
   <meta name="description" content="<%= @context[:description] || 'Blog of Achmad Mahardi' %>" />
   <meta name="author" content="<%= @config[:author] %>">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <% unless @context[:description].nil? %>
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@achmadmahardi">
@@ -30,20 +27,13 @@
   <link rel="stylesheet" href="/css/print.css" media="print" />
   <script src="/js/libs/prefixfree.min.js"></script>
 </head>
-<body>
-  <header id="sidebar">
-    <ul id="meta">
-      <li class="blogname"><h1 id="blogname"><a href="/" title="Welcome">Achmad Mahardi</a></h1></li>
-      <li class="tagline"><h2 id="tagline">Je suis badass</h2></li>
-      <li class="website archive link"><a href="/archives" title="Previous Post">archive</a></li>
-      <li class="website about link"><a href="/about" title="About Me">about</a></li>
-      <li class="twitter link"><a href="http://twitter.com/achmadmahardi" title="twitter" target="_blank">@achmadmahardi</a></li>
-      <li class="email link"><a href="mailto:achmad@mahardi.me&subject=Hello!" title="email">mail me</a></li>
-    </ul>
-  </header>
-  <section id="main" data-pjax-container>
-    <%= yield %>
-  </section>
+  <%= yield %>
+  <footer class="site-footer">
+      <div class="inner">
+           <section class="copyright">All content copyright <a href="/">Achmad Mahardi</a> &copy; 2012 &bull; All rights reserved.</section>
+           <section class="poweredby">Proudly published with <a href="https://github.com/cloudhead/toto">Toto</a></section>
+      </div>
+  </footer>
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-25636536-2']);
