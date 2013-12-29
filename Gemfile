@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 gem "builder"
-gem "toto"
+gem "toto", "0.4.9", :path => 'vendor/toto'
 gem "rdiscount", "~> 2.1.7"
 gem "typogruby"
 gem "hpricot"

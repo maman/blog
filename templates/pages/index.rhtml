@@ -1,21 +1,44 @@
-<header id="lupd">
-  <time datetime="<%= Time.now.strftime("%Y-%m-%d %H:%M:%S%z") %>"><%= Time.now.strftime("%B %d, %Y") %></time>
+<%
+    page = page_num rescue 1
+    per_page = @config[:per_page]
+    page = 1 if (page.nil? or (page-1) * per_page > @articles.length) or page < 1
+    page_results = @articles.length / per_page + 1
+    prev_page = page > 1 ? page - 1 : nil
+    next_page = @articles.length > page * per_page ? page + 1 : nil
+%>
+<body class="body-template">
+<header class="site-head" style="background-image:url('/img/bg.jpg')">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <a class="blog-logo" href="/"><img src="http://placehold.it/256x256" alt="Blog Logo" /></a>
+            <h1 class="blog-title"><%= @config[:author] %></h1>
+            <h2 class="blog-description"><%= @config[:blogdescription] %></h2>
+        </div>
+    </div>
 </header>
-<% for article in articles[0...5] %>
-<article class="hentry">
-  <header>
-      <h1 class="entry-title"><a href="<%= article.path %>"><%= article.title %></a></h1>
-  </header>
-  <div class="entry-content">
-    <%= article.summary %>
-    <% if article.summary.count("/n") != article.body.count("/n") %>
-      <a href="<%= article.path %>" title="read">read on</a>
+<main class="content" role="main">
+    <% articles.each do |article| %>
+    <article class="post">
+        <header class="post-header">
+            <span class="post-meta"><time datetime="<%= article.dateUTC %>"><%= article.datetime %></time></span>
+            <h2 class="post-title"><a href="<%= article.path %>"><%= article.title %></a></h2>
+        </header>
+        <section class="post-content">
+            <%= article.summary %>
+        </section>
+    </article>
     <% end %>
-  </div>
-</article>
-<% end %>
-<nav>
-  <ul>
-    <li><a href="/archives" title="More on Archive">More on Archive</a></li>
-  </ul>
-</nav>
+    <nav class="pagination" role="pagination">
+        <% if prev_page %>
+            <a class="newer-posts" href="/page/<%=prev_page%>">← Newer Posts</a>
+            <% if prev_page = 1 %>
+                <a class="newer-posts" href="/">← Newer Posts</a>
+            <% end %>
+        <% end %>
+        <span class="page-number">Page <%= page %> of <%= page_results %></span>
+        <% if next_page %>
+            <a class="older-posts" href="/page/<%=next_page%>">Older Posts →</a>
+        <% end %>
+    </nav>
+    <!-- <p>page number: <%= page_num rescue 1 %></p> -->
+</main>
