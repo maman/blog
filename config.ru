@@ -15,6 +15,7 @@ end
 toto = Toto::Server.new do
   set :author, "Achmad Mahardi"
   set :blogdescription, "Je suis badass"
+  set :blogtagline, "Miscellaneous things and writings by Achmad Mahardi"
   set :title, "Achmad Mahardi: blog"
   set :root, "index"
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }

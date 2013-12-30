@@ -1,19 +1,52 @@
-<body class="post-template">
-<main class="content" role="main">
-    <article class="post">
+<div class="container read">
+    <article class="current-article">
         <% if !image.nil? %>
-            <header class="post-header" style="background-image: url('<%= image %>')"></header>
+        <div class="post-image" style="background-image: url('<%= image %>')">
+            <div class="post-details">
+                <div class="inner">
+                    <h1 class="post-title"><%= title %></h1>
+                    <h2 class="post-description"><%= description %></h2>
+                    <div class="post-meta">
+                        <time datetime="<%= dateUTC %>"><%= datetime %></time>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inner">
+            <div class="articles">
+                <div class="post-fullpost">
+                    <%= body %>
+                </div>
+            </div>
+        </div>
         <% else %>
-            <header class="post-header">
+        <div class="inner">
+            <div class="articles">
+                <div class="post-fullpost">
+                    <h1 class="post-title"><%= title %></h1>
+                    <h2 class="post-description"><%= description %></h2>
+                    <div class="post-meta">
+                        <time datetime="<%= dateUTC %>"><%= datetime %></time>
+                    </div>
+                    <%= body %>
+                </div>
+            </div>
+        </div>
         <% end %>
-            <a class="blog-logo" href="/"><img src="http://placehold.it/256x256" alt="Blog Logo" /></a>
-        </header>
-        <span class="post-meta"><time datetime="<%= dateUTC %>"><%= datetime %></time></span>
-
-        <h1 class="post-title"><%= title %></h1>
-
-        <section class="post-content">
-            <%= body %>
-        </section>
+        <div class="push"></div>
     </article>
-</main>
+    <div class="next-article">
+        <% if next_page_url %>
+            <% if !next_page_image.nil? %>
+        <div class="next-article-img" style="background-image: url('<%= next_page_image %>');"></div>
+            <% end %>
+        <a href="<%= next_page_url %>">
+            <div class="inner">
+                <span>Next Post</span>
+                <h1 class="post-title"><%= next_page_title %></h1>
+                <h2 class="post-description"><%= next_page_desc %></h2>
+            </div>
+        </a>
+        <% end %>
+    </div>
+</div>

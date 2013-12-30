@@ -6,39 +6,46 @@
     prev_page = page > 1 ? page - 1 : nil
     next_page = @articles.length > page * per_page ? page + 1 : nil
 %>
-<body class="body-template">
-<header class="site-head" style="background-image:url('/img/bg.jpg')">
-    <div class="vertical">
-        <div class="site-head-content inner">
-            <a class="blog-logo" href="/"><img src="http://placehold.it/256x256" alt="Blog Logo" /></a>
-            <h1 class="blog-title"><%= @config[:author] %></h1>
-            <h2 class="blog-description"><%= @config[:blogdescription] %></h2>
+<div class="background full">
+    <div class="background image" style="background-image: url('/img/bg.jpg')"></div>
+    <div class="background image blur" style="background-image: url('/img/blur-bg.jpg');opacity: 0"></div>
+</div>
+<div class="container list">
+    <div class="inner">
+        <div class="hero">
+            <div class="caption">
+                <h2><%= @config[:blogdescription] %></h2>
+                <span class="tagline"><%= @config[:blogtagline] %></span>
+                <div class="button-set">
+                    <a href="/index.xml" class="button large" data-skip-pjax>Feeds <span class="icon icon-rss"></span></a>
+                </div>
+            </div>
         </div>
-    </div>
-</header>
-<main class="content" role="main">
-    <% articles.each do |article| %>
-    <article class="post">
-        <header class="post-header">
-            <span class="post-meta"><time datetime="<%= article.dateUTC %>"><%= article.datetime %></time></span>
-            <h2 class="post-title"><a href="<%= article.path %>"><%= article.title %></a></h2>
-        </header>
-        <section class="post-content">
-            <%= article.summary %>
-        </section>
-    </article>
-    <% end %>
-    <nav class="pagination" role="pagination">
-        <% if prev_page %>
-            <a class="newer-posts" href="/page/<%=prev_page%>">← Newer Posts</a>
-            <% if prev_page = 1 %>
-                <a class="newer-posts" href="/">← Newer Posts</a>
+        <div class="articles">
+            <% articles.each do |article| %>
+            <article class="post-excerpt">
+                <h3 class="post-title"><a href="<%= article.path %>"><%= article.title %></a></h3>
+                <a href="<%= article.path %>" class="post-snippet">
+                    <p><%= article.description %></p>
+                </a>
+                <div class="post-meta">
+                    <time datetime="<%= article.dateUTC %>"><%= article.datetime %></time> &bull; <span class="readtime"><%= article.reading_time %></span>
+                </div>
+            </article>
             <% end %>
-        <% end %>
-        <span class="page-number">Page <%= page %> of <%= page_results %></span>
-        <% if next_page %>
-            <a class="older-posts" href="/page/<%=next_page%>">Older Posts →</a>
-        <% end %>
-    </nav>
-    <!-- <p>page number: <%= page_num rescue 1 %></p> -->
-</main>
+        </div>
+        <nav class="pagination" role="pagination">
+            <% if !prev_page.nil? %>
+                <% if prev_page == 1 %>
+            <a class="newer-posts button" href="/">← Newer Posts</a>
+                <% else %>
+            <a class="newer-posts button" href="/page/<%=prev_page%>">← Newer Posts</a>
+                <% end %>
+            <% end %>
+            <span class="page-number">Page <%= page %> of <%= page_results %></span>
+            <% if next_page %>
+            <a class="older-posts button" href="/page/<%=next_page%>">Older Posts →</a>
+            <% end %>
+        </nav>
+    </div>
+</div>

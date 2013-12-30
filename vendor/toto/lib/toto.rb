@@ -180,6 +180,40 @@ module Toto
         @config[:title]
       end
 
+      def get_next_page
+        current = article.url
+        all = @articles.map(&:url)
+        get_next_page = (all.index(current) + 1)
+      end
+
+      def next_page_url
+        if get_next_page
+          @articles[get_next_page].path
+        end
+      end
+
+      def next_page_title
+        next_page_title = (@articles[get_next_page].nil? ? @articles[0].title : @articles[get_next_page].title)
+      end
+
+      def next_page_desc
+        next_page_desc = (@articles[get_next_page].nil? ? @articles[0].description : @articles[get_next_page].description)
+      end
+
+      def next_page_image
+        next_page_image = (
+          if @articles[get_next_page].nil?
+            if !@articles[get_next_page].image.nil?
+              @articles[0].image
+            end
+          else
+            if !@articles[get_next_page].image.nil?
+              @articles[get_next_page].image
+            end
+          end
+        )
+      end
+
       def render page, type
         content = to_html page, @config
         type == :html ? to_html(:layout, @config, &Proc.new { content }) : send(:"to_#{type}", page)
@@ -278,6 +312,21 @@ module Toto
       markdown(sum.length == self[:body].length ? sum : sum.strip.sub(/\.\Z/, '&hellip;'))
     end
 
+    def reading_time
+        word_count = self[:body].split.length
+        total_time = word_count / @config[:reading_wpm].to_f
+
+        minute = total_time.to_i
+        min_title = "min read"
+
+        reading_time = ""
+        if minute > 0
+            reading_time = "#{minute} #{min_title}"
+        else
+            reading_time = "Less than 1 #{min_title}"
+        end
+    end
+
     def url
       "http://#{(@config[:url].sub("http://", '') + self.path).squeeze('/')}"
     end
@@ -293,6 +342,10 @@ module Toto
 
     def title()
         self[:title] || "an article"
+    end
+
+    def description()
+        self[:description] || "an article by Achmad Mahardi"
     end
 
     def date()
@@ -340,6 +393,7 @@ module Toto
       :summary => {:max => 150, :delim => /~\n/},           # length of summary and delimiter
       :ext => 'txt',                                        # extension for articles
       :cache => 28800,                                      # cache duration (seconds)
+      :reading_wpm => 170,                                  # average reading time in words per minute
       :github => {:user => "", :repos => [], :ext => 'md'}, # Github username and list of repos
       :to_html => lambda {|path, page, ctx|                 # returns an html, from a path & context
         ERB.new(File.read("#{path}/#{page}.rhtml")).result(ctx)

@@ -26,7 +26,7 @@ One more minus on my book, because the trickiness. Why isn't there a CodeKit for
 
 Beside the workflow, I'm also used to [Slate](https://github.com/jigish/slate) Window Manager when I'm on OSX back then. so, after reading some of [/w/'s Desktop Customization Guide](http://pastebin.com/W0SsUtEH) - especially the tiling window manager section, I make up an AHK Scripts to mimic my Slate Config. Get it [here](https://gist.github.com/maman/5180746). Now, here's my Desktop looks like now:
 
-![Windows 8 Desktop](http://cl.ly/NcMQ/FFFFUUUUU.jpg)
+[![Windows 8 Desktop](http://cl.ly/NcMQ/FFFFUUUUU.jpg)](http://cl.ly/NcMQ/FFFFUUUUU.jpg)
 
 Exciting, eh. I know, I'm going too far by removing the border. I'm using Alt + Drag to move the window, however.
 
