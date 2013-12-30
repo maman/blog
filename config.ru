@@ -21,7 +21,7 @@ toto = Toto::Server.new do
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
   set :markdown, :smart
   set :summary, :max => 1000, :delim => /%/
-  set :per_page , 5
+  set :per_page , 15
 end
 
 run toto
