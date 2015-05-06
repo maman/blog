@@ -1,0 +1,38 @@
+---
+title: Debugging dengan Chrome Developer Tools - Mengenal Breakpoints
+date: 06/05/2015
+description: Pada artikel ini, akan dijelaskan bagaimana kita dapat melakukan debug pada aplikasi web yang berbasis javascript dengan menggunakan Chrome Developer Tools.
+
+Chrome Developer Tools, atau yang biasa disebut dengan *DevTools* adalah sebuah aplikasi untuk melakukan inspeksi dan debugging pada halaman web yang terintegrasi dan *built-in* didalam browser Google Chrome.
+
+[![devtools-preview](http://cl.ly/asEy/Screen%20Shot%202015-05-06%20at%209.28.46%20AM.png)](http://cl.ly/asEy/Screen%20Shot%202015-05-06%20at%209.28.46%20AM.png)
+
+Aktivitas *debug* akan mempermudah kita untuk mengecek alur kerja aplikasi dan mengetahui setiap perubahan yang terjadi pada aplikasi, baik variabel, *state*, dan lain lain, sehingga kita dapat menyelesaikan setiap *issue* atau *bug* yang ada pada aplikasi dengan lebih efisien.
+
+## Menambahkan Breakpoint
+
+Untuk mulai melakukan *debug* pada aplikasi, cara paling mudah adalah dengan menggunakan *breakpoints*, yaitu penanda yang kita pasang pada *source code*. Penanda ini nantinya akan dibaca oleh *debugger* yang ada pada *DevTools*, dan secara otomatis eksekusi aplikasi akan ditunda (*pause*). Nah, saat aplikasi berhenti, secara otomatis *DevTools* akan melakukan *State Dumping*, sehingga kita dapat berinteraksi secara langsung dengan aplikasi via *Console*. sebagai contoh, kita dapat memanipulasi variabel `todo.title` sehingga bernilai `robin`.
+
+[![breakpoint-intro](http://cl.ly/asem/devtool-breakpoint-intro.gif)](http://cl.ly/asem/devtool-breakpoint-intro.gif)
+
+Untuk mulai menambahkan *breakpoints*, pertama tama buka *DevTools*, lalu buka *source code* dari aplikasi yang ada pada tab *Sources*. browse *source code* yang ingin di-*debug*, lalu klik pada *line number* untuk menambahkan breakpoint pada *line* tersebut.
+
+*Breakpoint* yang telah ditambahkan akan muncul pada sidebar ***Breakpoint***, seperti pada animasi diatas.
+
+Apabila ingin menambahkan *breakpoint* langsung dari *source code*, caranya adalah dengan mengisikan kode `debugger` pada line yang akan diberi *breakpoint*.
+
+### Breakpoint via *Event*
+
+Jika diperhatikan, pada sidebar juga terdapat entri *DOM Breakpoints*, *XHR Breakpoints*, dan *Event Listener Breakpoints*. ketiga entri ini disebut juga sebagai *Event-based Breakpoints*, yaitu breakpoint yang akan aktif ketika event yang bersangkutan dijalankan.
+
+#### DOM Breakpoints
+
+*DOM Breakpoints* akan dijalankan apabila aplikasi melakukan sebuah *event* yang menyebabkan Struktur DOM pada element tertentu berubah. Struktur dalam hal ini dapat berupa atribut, *child/subtree*, atau elemen dihapus.
+
+#### XHR Breakpoints
+
+*XHR Breakpoints* akan dijalankan ketika aplikasi melakukan *request* atau berinteraksi dengan menggunakan XHR/AJAX dengan URL tertentu.
+
+#### Event Listener
+
+*Event Listener Breakpoints* akan dijalankan ketika aplikasi melakukan sebuah event tertentu, yang didefinisikan dengan cara mencentang *event* yang ingin dikenai *breakpoint* pada list.
