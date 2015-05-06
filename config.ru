@@ -1,8 +1,12 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'toto'
 require 'rack/no-www'
 require 'rack-pjax'
 
 # Rack config
+use Rack::Deflater
 use Rack::Static, :urls => ['/css', '/js', '/img', '/font', '/favicon.ico'], :root => 'public'
 use Rack::Pjax
 use Rack::CommonLogger

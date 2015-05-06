@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'toto'
 
 @config = Toto::Config::Defaults
@@ -35,7 +38,7 @@ end
 desc "Test blog locally."
 task :test do
   toto "Testing local"
-  `unicorn`
+  `puma -C server.rb`
 end
 
 def toto msg
