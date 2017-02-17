@@ -38,3 +38,9 @@ DEPENDENCIES
   rdiscount (~> 2.1.7)
   toto (= 0.4.9)!
   typogruby
+
+RUBY VERSION
+   ruby 1.9.3p551
+
+BUNDLED WITH
+   1.14.4
