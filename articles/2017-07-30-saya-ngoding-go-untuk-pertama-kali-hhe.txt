@@ -1,0 +1,120 @@
+---
+title: Saya ngoding go untuk pertama kali hhe
+date: 30/07/2017
+description: ! 'tl;dr: go mayan gampang buat dipahamin & dibaca. gwhen in doubt, RTFG
+  (Read The F*ing Godoc)'
+
+Jadi, sebenernya sudah lama saya pingin nyoba nyoba [go](https://golang.org). Tertarik sama static typing yang ditawarkan (saya belum pernah make bahasa yg *pure* static-typing gitu, palingan cuma JavaScript + [Flowtype](https://flow.org) ato [TypeScript](http://www.typescriptlang.org)), plus go ini bahasa functional.
+
+Nah, akhirnya kemarin dapet sebuah kasus, yang bisa dipake buat saya nyoba nyoba si go ini, soalnya lumayan gampang dan logic yang dibutuhin nggak ribet.
+
+Kasusnya adalah bikin semacam interface service buat [Amazon S3](https://aws.amazon.com/s3/), fiturnya cukup ambil & taruh gambar ke S3. gitu tok. bedanya, ada fungsi buat ngeresize gambarnya, on the fly, pas ngambil (kenapa? nanti dijelasin dibawah 😄).
+
+Selama mbikin, ini hal hal yang menarik yang saya alamin
+
+### Package Manager
+
+Hal pertama yang dilakukan adalah init projeknya. Nah kalo di Sale Stock, kami punya standar untuk *stack* go - pake [glide](http://glide.sh) buat ngurusin dependensi etc. bayangin aja si glide ini semacam [npm](https://docs.npmjs.com/getting-started/what-is-npm) kalo di nodejs. Cukup buat file `glide.yml` di root folder projeknya, list apa aja dependensi yang dibutuhin, trus jalanin `glide install` buat install dependensinya di folder `vendor`. nanti, kalo mau pake, cara panggilnya bakal sama kaya biasanya kamu manggil dependensi eksternal di go.
+
+```yaml
+package: github.com/salestock/proyek-rahasia-hhe
+import:
+- package: github.com/gorilla/mux
+- package: github.com/satori/go.uuid
+```
+
+```go
+package main
+
+import (
+  "fmt"
+
+  "github.com/gorilla/mux"
+  uuid "github.com/satori/uuid.go"
+)
+
+func main() {
+  uuid := uuid.V4()
+  fmt.Println(uuid)
+}
+```
+
+nah, kaya gitu. cukup fleksibel. Selain bisa make glide tadi, go juga punya [godep](https://github.com/tools/godep) buat manage dependensi projeknya.
+
+### Typing - Tipe data - itulah pokoknya
+
+Naah, static typing. ini yang paling beda sama JavaScript. misal, kalo di javascript kaya gini kan boleh boleh aja
+
+```js
+function test(a, b) {
+  return a + b
+}
+
+// '12'
+console.log(test(1, '2'))
+```
+
+fungsi yang sama di go, bakal ga dibolehin, merah merah di editor + nggak bisa dicompile (oiya, go ini perlu di *compile*, kaya java, .net, gitu)
+
+```go
+func test(a int, b int) int {
+  return a + b
+}
+
+// eror, pak.
+fmt.Println(test(1, "2"))
+
+// '3'
+fmt.Println(test(1, 2))
+```
+
+selain tipe data primitif/bawaan kaya `bool`, `string`, `int`, dan lain lain, kita bisa punya definisi tipe data sendiri, misal
+
+```go
+type S3FetchResult struct {
+  Body        io.ReadCloser
+  ContentType string
+  ETag        string
+}
+```
+
+disitu saya mbikin tipe data `S3FetchResult`, berupa object yg isinya `Body` dengan tipe data `io.ReadCloser`, `ContentType` dengan tipe data `string`, dan `ETag` dengan tipe data `string`.
+
+### Konvensi
+
+Go punya beberapa konvensi, misal sebuah tipe data, fungsi, ato apapun dalam sebuah package yang namanya diawali huruf kapital akan otomatis dianggap sebagai *public* - atau otomatis di *export*. jadi misal kalian pas mbaca kodingan go, terus nemu beberapa method/fungsi yang pake huruf besar, berarti itu fungsi yang bisa kalian pake.
+
+Karena apapun yang pake huruf kapital itu otomatis *public*, jadinya kita wajib dan harus mendokumentasikan apa yang dilakukan sama fungsi tersebut di baris sebelumnya, misal
+
+```go
+// ResizeImage
+// 
+// Merubah ukuran image, agar sehingga bla bla bla
+func ResizeImage(img image.Image, width, height uint) {
+  …
+}
+```
+
+dokumentasinya wajib menyertakan nama fungsi (ya, wajib). Kenapa go mewajibken penulisan dokumentasi kaya gini? nah, ini berkaitan sama hal menarik selanjutnya..
+
+### Dokumentasi
+
+Go punya dokumentasi yang lengkap, ya karena konvensinya memang mewajibkan kita buat nulis dokumentasi 😄. Nah, hasil dokumentasinya bisa dilihat via [godoc](http://godoc.org). Si GoDoc ini bakal nampilin dokumentasi yang kita tulis tadi jadi sebuah halaman web yang enak buat dibaca 👍
+
+kalo mau baca dokumentasi dari *standard library* punya go, bisa dibaca di [sini](https://golang.org/pkg/). Untuk *library* lain dari github misalnya, bisa dibaca di [godoc.org](http://godoc.org), misal dokumentasi buat [*library* AWS S3 ini](http://godoc.org/github.com/lye/s3).
+
+Nah itu hal hal menarik yang saya temuin pas ngoding go. Pas ngoding saya juga masih sering bingung bingung sendiri gitu, akhirnya tanya tanya minta bantuan sama temen yang biasa ngoding go di Sale Stock, hhe.
+
+Shoot out buat [asus](https://github.com/andresusanto), [alif](https://github.com/alifradityar), sama mas [artiko](https://github.com/toshim45) yang udah mbantuin & kasik masukan 😄
+
+Sekarang lanjut njelasin "ngapain ada resize segala". Gini ceritanya, jadi si service yang tak bikin ini nantinya bakal diakses make *Content Delivery Network* atau CDN. Si CDN ini, punya fitur buat nge-*cache* semua request yang lewat.
+
+Misal saya request gambar A dengan ukuran 300px, saya bakal pake URL `http://cdn.service.com/300/aaa.png`. CDN bakal liat, dia udah punya cache buat URL itu atau belum? Kalo belum, dia baru minta service yang saya bikin, biar dia ambil dari S3, trus ngeresize gambarnya ke ukuran 300px.
+
+Nanti, misal ada orang lain yang request gambar A dengan ukuran 300px lagi, CDN nggak perlu minta ke service saya lagi. dia cukup kasih gambar yang sudah ada di *cache* punya dia. baru misal ada yang request dengan ukuran 500px, dia minta ke service saya lagi 😄
+
+Keuntungannya, saya nggak perlu upload gambar dengan ukuran yang beda beda ke S3, karena soal ukuran bakal diurusin sama service interface yang saya bikin ini. Selain itu, si CDN juga tetep bisa nge-*cache* semua ukuran gambar yang dibutuhin sama orang lain, biar *delivery* gambarnya tetep cepet dan optimal 👍
+
+Oke cukup segitu dulu, makasih ya udah baca 🙏
+
+maman, over n out!
