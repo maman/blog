@@ -8,6 +8,8 @@ Jadi, sebenernya sudah lama saya pingin nyoba nyoba [go](https://golang.org). Te
 
 Nah, akhirnya kemarin dapet sebuah kasus, yang bisa dipake buat saya nyoba nyoba si go ini, soalnya lumayan gampang dan logic yang dibutuhin nggak ribet.
 
+![gambar-kodinganku](https://cl.ly/llQC/Screen%20Shot%202017-07-30%20at%204.41.21%20AM.png)
+
 Kasusnya adalah bikin semacam interface service buat [Amazon S3](https://aws.amazon.com/s3/), fiturnya cukup ambil & taruh gambar ke S3. gitu tok. bedanya, ada fungsi buat ngeresize gambarnya, on the fly, pas ngambil (kenapa? nanti dijelasin dibawah 😄).
 
 Selama mbikin, ini hal hal yang menarik yang saya alamin
