@@ -1,0 +1,48 @@
+---
+title: Remote coding, ngoding di server!
+date: 01/11/2017
+description: Pengalaman ngoding di server, prosnya gimana, consnya gimana. Pamer dikit
+  wkwk
+
+Jadi, udah beberapa minggu ini saya ngoding pake devbox - semacam "private VPS" yang dikasi kantor buat tiap engineer ✨. Nah, di devbox ini by default udah lengkap stack yang dibutuhin buat develop service di Sale Stock, jadi ngga perlu lagi setup manual, kecuali editor (ntar coba kujelasin gimana si editor yang kupake 😄).
+
+Basically si devbox ini jadi sebuah "service"/"pod" di kubernetes, jadi dia dibuild dari satu dockerfile yang udah _standardized_. Karena kita pake docker buat develop aplikasi, jadinya di dalemnya devbox ini, kita pake konsep yang namanya [Docker in Docker](https://github.com/jpetazzo/dind)
+
+![Docker DND - run docker inside docker inside docker...](https://cl.ly/nRYF/spintop.jpg)
+
+Nah, kalo mau pake si devbox ini, kita perlu bikin dulu - cara bikin, login, delete, etc udah diwrap ke `ssi`, tool internal, swiss-knife kita di Sale Stock 😄 (mas [garindra](https://github.com/garindra) pernah sedikit bahas si `ssi` ini di [talk tempo hari](https://speakerdeck.com/salestock/scalability-at-sale-stock)). Kalo udah bikin, tinggal masuk, dan clone main repository kita kedalem devbox ini, terus lakukan setup sesuai apa yang mau didevelop (lagi lagi, step setup ini udah diabstraksi juga sama `ssi`. See the pattern? 😌). Udah, sekarang tinggal ngoding deh.
+
+## Ngoding
+
+Nah, untuk ngodingnya sendiri ada beberapa alternatif yang bisa dipake:
+
+1. SyncThing
+2. Atom + Nuclide
+3. Going hardcore pake vim/emacs
+
+### SyncThing
+Di devbox udah ada semacem daemon untuk nge-sync sebuah direktori ke local laptop kita. Bayangin dropbox, tapi privat. Enaknya pake ini, kita bisa pake editor apapun yang kita install di laptop. Kalo di save di local, dia bakal ngesync juga ke devbox. Nggak enaknya, sync ini bisa jadi bakal lama banget karena Sale Stock pake konsep Monorepo - dan itu cukup gede repo nya, dan buat switching branch etc tetep harus via devbox, dan nunggu nge-sync lagi.
+
+### Atom + Nuclide
+Nah, ini menarik. Jadi kita bisa pake [Atom](http://atom.io) + [Nuclide](http://nuclide.io) buat develop di devbox. si Nuclide ini punya mode yang namanya _Remote Development_, jadi kita bisa ngedit apapun di server tanpa harus download/sync ke lokal dulu. Awalnya saya pake ini, tapi jadi nggak seneng ketika tau plugin plugin macam Linter, Autosave hooks, etc yang tak pake di Atom ga fungsi kalo saya lagi _Remote Development_.
+
+### Going hardcore
+Ini yang paling keren dan grasroots haha. Jadi yaudah, buka terminal, konek devbox, trus ngoding deh didalem devbox pake [nvim](https://neovim.io). Leptop bersih, ngga usah install aneh aneh. yang perlu disiapin cuma vpn client, `ssi`, sama `[mosh](http://mosh.org)` doang(kita pake mosh buat konek ke devbox, kalo gada dia bakal fallback ke ssh). Di devbox defaultnya udah ada [tmux](https://github.com/tmux/tmux/wiki), jadi saya nggak usah takut ilang kerjaan misal internet kacau ato gimana. Si tmux ini bakal simpan semua session terminal kamu, jadi pas mbalik tinggal di _attach_ ulang aja, ntar proses apapun yang jalan bakal keluar. si mosh sendiri support semacam _resume_, jadi bedanya sama ssh, kalo misal internetmu putus ssh bakal putus juga. Kalo mosh enggak, dia bakal nunggu sampe ada koneksi lagi, trus dilanjutin deh sessionnya 👌
+
+![berlagak-kerja-padahal-nggak-cuma-screenshot-aja](https://cl.ly/nQgV/Screen%20Shot%202017-11-01%20at%2019.07.53.png)
+
+## Pros!
+
+Yang paling ngefek, battery-life! sebelumnya kalo aku develop & ngoding pake leptop, paling tahan 4/5 jam an doang. Nah pake si devbox, bisa luama banget, kayanya seharian jg masih tahan ini MBP kantor haha. Trus, bisa sharing hasil development sama temen temen engineer lain, karena si devboxnya udah dicantolin sama DNS internal punya Sale Stock. Jadi misal temen mau liat/bantu debug, dia bisa langsung buka alamat devbox saya gitu.
+
+Hmm, lain lain, leptopnya jadi bersih. nggak ada file file kerjaan, semua ada di devbox. Jadinya bisa ada tempat yang lebih lega buat film ato file file gede lain, misalnya 😌
+
+## Cons!
+
+Masih ngga kebiasa sama vim. Saya masih merasa kalo produktivitas lebih gede kalo pake editor/IDE lain kaya webstorm/vscode. Tapi itu nggak masalah, cuma masalah waktu aja hehe. Trus, karena devbox ini jalan di cluster kubernetes yang sama kaya service lain, jadi dia juga ada kemungkinan mati mendadak karena cluster di Sale Stock pake konsep `pre-emptible` semua (Apa itu pre-emptible? mungkin nanti lain waktu aku bisa bahas ini). Nah ketika mati, root filesystem dari devbox ini bakal kembali seperti sediakala, tapi user-level directory  
+
+---
+
+Jadi, konsep remote coding ini cukup enak sih diterapkan, dan kelebihan yang ditawarkan juga gede. Kalo kalian mau nyoba juga, mungkin bisa coba pake VPS, pake [DigitalOcean](http://digitalocean.com), [OVH](https://ovh.com) ato vendor VPS lain. Saya pernah mau bikin sendiri, tapi ternyata cukup mahal. Soalnya, misal devbox, defaultnya kita bakal dapet RAM 8GB, dan HDD 80GB (seingatku). Itu misal sewa sendiri, bisa sekitar 5$ sebulan, cukup mahal 😅.
+
+Gimana, tertarik pingin nyoba? ato mungkin join ke Sale Stock Engineering buat bisa nyoba? kebetulan kita lagi hiring nih, both Front End Engineer dan Back-end Engineer 😄. Kalo tertarik, mention aja twitter saya, @achmadmahardi 👌.
